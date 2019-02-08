@@ -1,0 +1,101 @@
+/*
+* Variables
+* ------------------------------
+*/
+
+:root {
+	/* Colors */
+	--white: #fff;
+	--black: #000;
+	--red: #d9534f;
+	--orange: #f0ad4d;
+	--yellow: #ffd500;
+	--green: #12F292;
+	--blue: #2095F0;
+	--teal: #68b7f5;
+	--pink: #ed4e6e;
+	--purple: #613d7c;
+	--blackOff: #0d0d0d;
+	--grayDarkest: #181818;
+	--grayDark: #292b2c;
+	--gray: #464a4c;
+	--grayLight: #aaa;
+	--grayLighter: #eceeef;
+	--grayLightest: #f7f7f9;
+	--brandPrimary: var(--blue);
+	--brandSuccess: var(--green);
+	--brandInfo: var(--teal);
+	--brandWarning: var(--orange);
+	--brandDanger: var(--pink);
+	--brandInverse: var(--grayDark);
+	--bodyBg: var(--white);
+	--bodyColor: var(--grayDarkest);
+	--linkColor: var(--blackOff);
+	--linkHoverColor: rgba(0, 0, 0, 0.33);
+
+	/* Fonts */
+
+	/* Fonts:Families */
+	--fontSansSerif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	--fontSerif: "Spectral", "Droid Serif", Georgia, "Times New Roman", Times, serif;
+	--fontMonospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+	--fontBase: var(--fontSerif);
+
+	/* Fonts:Sizes */
+	--fontSizeBase: 1rem;
+	--fontSizeXs: 0.75rem;
+	--fontSizeSm: 0.875rem;
+	--fontSizeMd: 1.25rem;
+	--fontSizeLg: 1.5rem;
+	--fontSizeXl: 1.875rem;
+	--fontSizeXxl: 2.25rem;
+
+	/* Fonts:Weights */
+	--fontWeightNormal: 400;
+	--fontWeightBold: 700;
+	--fontWeightBase: var(--fontWeightNormal);
+
+	/* Fonts:Line-Heights */
+	--lineHeightBase: 1.5;
+	--lineHeightSm: 1.2;
+	--lineHeightLg: 1.75;
+
+	/* Fonts:Headings */
+	--fontSizeH1: 2.5rem;
+	--fontSizeH2: 2rem;
+	--fontSizeH3: 1.75rem;
+	--fontSizeH4: 1.5rem;
+	--fontSizeH5: 1.25rem;
+	--fontSizeH6: 1rem;
+
+	/* Fonts:Headings:Settings */
+	--headingsFontFamily: var(--fontSansSerif);
+	--headingsFontWeight: 700;
+	--headingsLineHeight: 1.33;
+	--headingsColor: inherit;
+
+	/* Media Queries */
+	--mqXs: 0;
+	--mqSm: 36rem; /* 576px */
+	--mqMd: 48rem; /* 768px */
+	--mqLg: 62rem;  /* 992px */
+	--mqXl: 75rem;  /* 1200px */
+	--mqXxl: 90rem; /* 1440px */
+
+	@custom-media --minXs (min-width: 0);
+	@custom-media --minSm (min-width: 36rem);
+	@custom-media --minMd (min-width: 48rem);
+	@custom-media --minLg (min-width: 62rem);
+	@custom-media --minXl (min-width: 75rem);
+	@custom-media --minXxl (min-width: 90rem);
+	@custom-media --maxSm (max-width: 36rem);
+	@custom-media --maxMd (max-width: 48rem);
+	@custom-media --maxLg (max-width: 62rem);
+	@custom-media --maxXl (max-width: 75rem);
+	@custom-media --maxXxl (max-width: 90rem);
+
+	/* Transitions */
+	--transitionTimingBase: 300ms;
+	--transitionTimingMed: 600ms;
+	--transitionTimingSlow: 900ms;
+}

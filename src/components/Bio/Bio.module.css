@@ -1,0 +1,9 @@
+.bio {
+	color: var(--brandPrimary);
+	display: flex;
+	margin-bottom: 1rem;
+}
+
+.avatar {
+	border-radius: 50%;
+}

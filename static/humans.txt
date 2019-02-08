@@ -1,0 +1,20 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM 🤖
+
+		Designer/Developer: Jason Cockerham
+		Contact: jason@jcock.rocks
+		Twitter: @jcock
+
+
+# THANKS 👍
+
+    The internet for giving me a job.
+
+
+# TECHNOLOGY COLOPHON 📡
+
+		Standards: HTML5, CSS3, JavaScript
+		Components: React, Gatsby, Babel, Uglify, PostCSS
+		Software: Photoshop, Illustrator, Adobe XD, Figma, VSCode, Hyper, Node
