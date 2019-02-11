@@ -6,10 +6,10 @@
   "author": "Jason Cockerham <jason@jcock.rocks>",
   "homepage": "https://jcock.rocks",
   "keywords": [
-		"gatsby",
-		"react",
-		"jamstack",
-		"static"
+    "gatsby",
+    "react",
+    "jamstack",
+    "static"
   ],
   "license": "Unlicense",
   "main": "n/a",
@@ -20,8 +20,10 @@
   "dependencies": {
     "gatsby": "^2.0.115",
     "gatsby-image": "^2.0.29",
+    "gatsby-plugin-canonical-urls": "^2.0.10",
     "gatsby-plugin-google-analytics": "^2.0.13",
     "gatsby-plugin-manifest": "^2.0.17",
+    "gatsby-plugin-netlify": "^2.0.10",
     "gatsby-plugin-offline": "^2.0.22",
     "gatsby-plugin-postcss": "^2.0.5",
     "gatsby-plugin-purgecss": "^3.1.0",

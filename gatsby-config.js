@@ -27,6 +27,12 @@ module.exports = {
 			}
 		},
 		{
+			resolve: `gatsby-plugin-canonical-urls`,
+			options: {
+				siteUrl: config.siteUrl
+			}
+		},
+		{
 			resolve: `gatsby-plugin-google-analytics`,
 			options: {
 				trackingId: config.googleAnalyticsID
@@ -74,6 +80,7 @@ module.exports = {
 		`gatsby-plugin-react-helmet`,
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
-		`gatsby-plugin-sitemap`
+		`gatsby-plugin-sitemap`,
+		`gatsby-plugin-netlify` // Must be last in the plugins array
 	]
 };
