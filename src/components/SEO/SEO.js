@@ -10,6 +10,10 @@ const detailsQuery = graphql`
 				title
 				description
 				author
+				verification {
+					google
+					bing
+				}
 			}
 		}
 	}
@@ -33,6 +37,14 @@ function SEO({ description, lang, meta, keywords, title }) {
 							{
 								name: `description`,
 								content: metaDescription
+							},
+							{
+								name: `google-site-verification`,
+								content: data.site.siteMetadata.verification.google
+							},
+							{
+								name: `msvalidate.01`,
+								content: data.site.siteMetadata.verification.bing
 							},
 							{
 								property: `og:title`,

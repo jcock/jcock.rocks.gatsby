@@ -1,4 +1,5 @@
 const config = {
+	pathPrefix: `/`,
 	siteTitle: `jcock.rocks`,
 	siteTitleShort: `jcock`,
 	siteDescription: `My cool site.`,
@@ -6,8 +7,17 @@ const config = {
 	author: `Jason Cockerham`,
 	themeColor: `#000`,
 	backgroundColor: `#fff`,
-	pathPrefix: `/`,
+
+	// Analytics
 	googleAnalyticsID: ``,
+
+	// Site verification
+	verification: {
+		google: `#`,
+		bing: `#`
+	},
+
+	// Favicons
 	logo: `src/assets/img/favicon.png`,
 	icons: [
 		{
@@ -61,6 +71,8 @@ const config = {
 			type: `image/png`
 		}
 	],
+
+	// Social
 	social: {
 		twitter: `#`,
 		fbAppId: `#`

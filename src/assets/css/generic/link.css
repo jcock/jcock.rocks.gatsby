@@ -6,7 +6,7 @@
 a {
 	background-color: transparent;
 	color: var(--linkColor);
-	text-decoration-skip: ink;
+	text-decoration-skip-ink: auto;
 	transition: color var(--transitionTimingBase) var(--easePrimary);
 
 	&:hover {

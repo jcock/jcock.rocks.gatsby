@@ -7,6 +7,10 @@ module.exports = {
 		author: config.author,
 		description: config.siteDescription,
 		siteUrl: config.siteUrl,
+		verification: {
+			google: config.verification.google,
+			bing: config.verification.bing
+		},
 		social: {
 			twitter: config.social.twitter
 		}

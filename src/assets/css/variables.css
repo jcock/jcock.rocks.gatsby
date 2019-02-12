@@ -47,10 +47,10 @@
 	*/
 
 	/* Fonts:Families */
-	--fontFamilySansSerif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	--fontFamilySansSerif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	--fontFamilySerif: "Droid Serif", Georgia, "Times New Roman", Times, serif;
-	--fontFamilyMonospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-	--fontFamilyBase: var(--fontFamilySerif);
+	--fontFamilyMonospace: Menlo, Monaco, Consolas, "Liberation Mono", "Andale Mono", "Ubuntu Mono", "Courier New", monospace;
+	--fontFamilyBase: var(--fontFamilySansSerif);
 
 	/* Fonts:Sizes */
 	--fontSizeBase: 1rem;

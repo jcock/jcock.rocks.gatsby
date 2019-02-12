@@ -6,7 +6,7 @@
 body {
 	background-color: var(--bodyBg);
 	color: var(--bodyColor);
-	font-family: var(--fontBase);
+	font-family: var(--fontFamilyBase);
 	font-size: calc(var(--fontSizeBase) + 0.25vw);
 	font-weight: var(--fontWeightBase);
 	line-height: var(--lineHeightBase);

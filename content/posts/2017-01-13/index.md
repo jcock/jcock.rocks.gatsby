@@ -12,6 +12,7 @@ Lorem markdownum huc suo ara, dubites celeri mihi bicolor. Secuti non? Suo opus
 quales dant, puppim hanc!
 
 ```js
+		// This is a cool ass comment
     enterprise /= mp_operating_quad;
     dsl_runtime.wired_horizontal_jquery = vramUs(64389, aix / socialSector +
             quad);
