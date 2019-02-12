@@ -1,0 +1,47 @@
+/*
+* Typography
+* ------------------------------
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--headingsFontFamily);
+	font-weight: var(--headingsFontWeight);
+	line-height: var(--headingsLineHeight);
+	color: var(--headingsColor);
+	margin-bottom: 0.5rem;
+}
+
+h1 {
+	font-size: var(--fontSizeH1);
+	margin-bottom: 1.5rem;
+}
+
+h2 {
+	font-size: var(--fontSizeH2);
+}
+
+h3 {
+	font-size: var(--fontSizeH3);
+}
+
+h4 {
+	font-size: var(--fontSizeH4);
+}
+
+h5 {
+	font-size: var(--fontSizeH5);
+}
+
+h6 {
+	font-size: var(--fontSizeH6);
+}
+
+nav ol,
+nav ul {
+	list-style: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E");
+}

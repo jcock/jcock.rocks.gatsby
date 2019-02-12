@@ -1,0 +1,19 @@
+/*
+* Link expand
+* Make any HTML element or component clickable by "expanding" a nested link via CSS.
+* ------------------------------
+*/
+
+.link-expand {
+	&::after {
+		background-color: rgba(0, 0, 0, 0); /* IE10 bugfix, see https://stackoverflow.com/questions/16947967/ie10-hover-pseudo-class-doesnt-work-without-background-color */
+		bottom: 0;
+		content: "";
+		left: 0;
+		pointer-events: auto; /* Just in case `pointer-events: none` is set on a parent */
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 1;
+	}
+}

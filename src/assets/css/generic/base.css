@@ -1,0 +1,37 @@
+/*
+* Generic
+* ------------------------------
+*/
+
+body {
+	background-color: var(--bodyBg);
+	color: var(--bodyColor);
+	font-family: var(--fontBase);
+	font-size: calc(var(--fontSizeBase) + 0.25vw);
+	font-weight: var(--fontWeightBase);
+	line-height: var(--lineHeightBase);
+}
+
+::selection {
+	background: var(--brandPrimary);
+	text-shadow: none;
+}
+
+[tabindex='-1']:focus {
+	outline: none !important;
+}
+
+a,
+area,
+button,
+[role='button'],
+input:not([type='range']) label,
+select,
+summary,
+textarea {
+	touch-action: manipulation;
+}
+
+svg > use {
+	fill: currentColor;
+}

@@ -4,4 +4,15 @@
 */
 
 @import "./variables.css";
-@import "./remedy.css";
+
+/* Generic */
+@import "./generic/remedy.css";
+@import "./generic/base.css";
+@import "./generic/link.css";
+
+/* Utilities */
+@import "./utilities/hide.css";
+@import "./utilities/link-expand.css";
+
+/* Print */
+@import "./generic/print.css";

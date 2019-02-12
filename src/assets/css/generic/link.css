@@ -1,0 +1,16 @@
+/*
+ * Link
+ * ------------------------------
+*/
+
+a {
+	background-color: transparent;
+	color: var(--linkColor);
+	text-decoration-skip: ink;
+	transition: color var(--transitionTimingBase) var(--easePrimary);
+
+	&:hover {
+		color: var(--linkHoverColor);
+		text-decoration: none;
+	}
+}
