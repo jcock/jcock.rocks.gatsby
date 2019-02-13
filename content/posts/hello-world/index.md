@@ -1,6 +1,10 @@
 ---
+date: 2015-05-01
 title: Hello World
-date: "2015-05-01T22:12:03.284Z"
+slug: hello-world
+description: We all hate getting caught up in the fury of a moment and making an ass of ourselves. Luckily, there are some simple steps you can take to make sure this doesn't happen again.
+tags: [the, fallen, time, something, cool]
+image: ./car.jpg
 ---
 
 This is my first post on my new fake blog! How exciting!

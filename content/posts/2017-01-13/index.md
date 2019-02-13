@@ -1,8 +1,10 @@
 ---
-title: "The Fallen Time"
-date: "2017-01-13"
-path: "/blog/the-fallen-time"
-cover: "https://unsplash.it/480/300/?random?TheFallenTime"
+date: 2017-01-13
+title: The Fallen Time
+slug: the-fallen-time
+description: We all hate getting caught up in the fury of a moment and making an ass of ourselves. Luckily, there are some simple steps you can take to make sure this doesn't happen again.
+tags: [the, fallen, time, something, cool]
+image: ./car.jpg
 ---
 # Autolyci eminus retenta
 

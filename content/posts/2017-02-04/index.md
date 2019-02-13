@@ -1,8 +1,10 @@
 ---
-title: "The Fairy's Witches"
-date: "2017-02-04"
-path: "/blog/the-fairys-witches"
-cover: "https://unsplash.it/480/300/?random?FairyWitch"
+date: 2017-02-04
+title: The Fairy's Witches
+slug: the-fairys-witches
+description: We all hate getting caught up in the fury of a moment and making an ass of ourselves. Luckily, there are some simple steps you can take to make sure this doesn't happen again.
+tags: [the, fallen, time, something, cool]
+image: ./car.jpg
 ---
 # Eram mora tuas in inter ferens caterva
 

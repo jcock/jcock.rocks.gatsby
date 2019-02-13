@@ -62,8 +62,7 @@
   "scripts": {
     "build": "gatsby build",
     "clean": "rm -rf public && rm -rf .cache",
-    "dev": "gatsby develop",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop -S",
     "format:js": "prettier --write 'src/**/*.js'",
     "format:md": "prettier --write 'src/**/*.md'",
     "lint:js": "eslint --ext .js,.jsx .",

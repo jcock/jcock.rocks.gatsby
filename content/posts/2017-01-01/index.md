@@ -1,8 +1,10 @@
 ---
-title: "Bold Mage"
-date: "2017-01-01"
-path: "/blog/bold-mage"
-cover: "https://unsplash.it/480/300/?random?BoldMage"
+date: 2017-01-01
+title: Bold Mage
+slug: bold-mage
+description: We all hate getting caught up in the fury of a moment and making an ass of ourselves. Luckily, there are some simple steps you can take to make sure this doesn't happen again.
+tags: [the, fallen, time, something, cool]
+image: ./car.jpg
 ---
 # Quanto et ius coniunctis urbes
 

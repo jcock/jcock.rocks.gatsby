@@ -1,6 +1,10 @@
 ---
+date: 2015-05-06
 title: My Second Post!
-date: "2015-05-06T23:46:37.121Z"
+slug: my-second-post
+description: We all hate getting caught up in the fury of a moment and making an ass of ourselves. Luckily, there are some simple steps you can take to make sure this doesn't happen again.
+tags: [the, fallen, time, something, cool]
+image: ./car.jpg
 ---
 
 Wow! I love blogging so much already.

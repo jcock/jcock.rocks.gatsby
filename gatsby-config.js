@@ -4,15 +4,19 @@ module.exports = {
 	pathPrefix: config.pathPrefix === '' ? '/' : config.pathPrefix,
 	siteMetadata: {
 		title: config.siteTitle,
+		titleTemplate: `%s | ${config.siteTitle}`,
 		author: config.author,
 		description: config.siteDescription,
+		keywords: config.siteKeywords,
 		siteUrl: config.siteUrl,
+		logo: config.logo,
 		verification: {
 			google: config.verification.google,
 			bing: config.verification.bing
 		},
 		social: {
-			twitter: config.social.twitter
+			twitter: config.social.twitter,
+			fbAppId: config.social.fbAppId
 		}
 	},
 	plugins: [
@@ -52,7 +56,7 @@ module.exports = {
 				background_color: config.backgroundColor,
 				theme_color: config.themeColor,
 				display: `minimal-ui`,
-				icon: config.logo,
+				icon: `${__dirname}/src/assets/${config.logo}`,
 				icons: config.icons
 			}
 		},

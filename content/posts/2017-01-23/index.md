@@ -1,8 +1,10 @@
 ---
-title: "Angels of Mist"
-date: "2017-01-23"
-path: "/blog/angels-of-mist"
-cover: "https://unsplash.it/480/300/?random?AngelsofMist"
+date: 2017-01-23
+title: Angels of Mist
+slug: angels-of-mist
+description: We all hate getting caught up in the fury of a moment and making an ass of ourselves. Luckily, there are some simple steps you can take to make sure this doesn't happen again.
+tags: [the, fallen, time, something, cool]
+image: ./car.jpg
 ---
 # Ab dicemur cura
 

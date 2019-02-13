@@ -1,8 +1,10 @@
 ---
-title: "Random project 4 With Super Long Title Phase One"
-date: "2017-02-03"
-path: "/blog/random-project-4-with-super-long-title-phase-one"
-cover: "https://unsplash.it/480/300/?random?RandomProject4"
+date: 2017-02-03
+title: Random project 4 With Super Long Title Phase One
+slug: random-project-4-with-super-long-title-phase-one
+description: We all hate getting caught up in the fury of a moment and making an ass of ourselves. Luckily, there are some simple steps you can take to make sure this doesn't happen again.
+tags: [the, fallen, time, something, cool]
+image: ./car.jpg
 ---
 # Artificem honorati ore temperat Lycus quam antiquum
 

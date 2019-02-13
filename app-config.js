@@ -1,24 +1,27 @@
 const config = {
 	pathPrefix: `/`,
-	siteTitle: `jcock.rocks`,
+	siteTitle: `Jason Cockerham 🤘 Designer and Developer`,
 	siteTitleShort: `jcock`,
-	siteDescription: `My cool site.`,
+	siteDescription: `The portfolio of Jason Cockerham, User Experience Designer and Front-End Developer.`,
+	siteKeywords: `ux design, front-end development, gatsbyjs, html, css, js, react, static, jamstack`,
 	siteUrl: `https://jcock.rocks`,
 	author: `Jason Cockerham`,
 	themeColor: `#000`,
 	backgroundColor: `#fff`,
 
 	// Analytics
-	googleAnalyticsID: ``,
+	googleAnalyticsID: `UA-54478957-1`,
 
 	// Site verification
 	verification: {
-		google: `#`,
-		bing: `#`
+		google: `CqIX8qMP-9YzT5j6O2ITwq-p0RpcxkbA3UZeEwZcRJw`,
+		bing: `D5EB4D7B4B2096C374CE2AEB1D6EDB32`
 	},
 
 	// Favicons
-	logo: `src/assets/img/favicon.png`,
+	// Make this image at least 1500x1500
+	// Serves as starting point to generate favicons as well as the default OG image
+	logo: `img/favicon.png`,
 	icons: [
 		{
 			src: `/apple-touch-icon.png`,
@@ -74,8 +77,8 @@ const config = {
 
 	// Social
 	social: {
-		twitter: `#`,
-		fbAppId: `#`
+		twitter: `@jcock`,
+		fbAppId: `103751713080205`
 	}
 };
 

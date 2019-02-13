@@ -1,8 +1,10 @@
 ---
-title: "The Butterfly of the Edge"
-date: "2017-03-17"
-path: "/blog/the-butterfly-of-the-edge"
-cover: "https://unsplash.it/480/300/?random?TheButterflyoftheEdge"
+date: 2017-03-17
+title: The Butterfly of the Edge
+slug: the-butterfly-of-the-edge
+description: We all hate getting caught up in the fury of a moment and making an ass of ourselves. Luckily, there are some simple steps you can take to make sure this doesn't happen again.
+tags: [the, fallen, time, something, cool]
+image: ./car.jpg
 ---
 # Hanc indeploratum seram Amphitryoniadae tremulis pauperque manum
 

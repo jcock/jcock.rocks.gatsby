@@ -25,8 +25,11 @@ class Layout extends React.Component {
 		}
 		return (
 			<div>
+				<a href="#start-of-content" className="sr focusable">
+					Skip to content
+				</a>
 				<header>{header}</header>
-				<main>{children}</main>
+				<main id="start-of-content">{children}</main>
 				<footer>
 					<p>
 						&copy; {new Date().getFullYear()},Built with
