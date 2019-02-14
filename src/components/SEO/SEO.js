@@ -11,20 +11,21 @@ const seoQuery = graphql`
 			buildTime(formatString: "YYYY-MM-DD")
 			pathPrefix
 			siteMetadata {
-				title
-				titleTemplate
+				author
 				description
 				keywords
-				author
-				siteUrl
+				lang
 				logo
-				verification {
-					google
-					bing
-				}
+				siteUrl
 				social {
 					twitter
 					fbAppId
+				}
+				title
+				titleTemplate
+				verification {
+					google
+					bing
 				}
 			}
 		}
@@ -38,28 +39,18 @@ const seoQuery = graphql`
 	}
 `;
 
-function SEO({
-	title,
-	date,
-	description,
-	lang,
-	pathname,
-	image,
-	imageAlt,
-	article,
-	keywords
-}) {
+function SEO({ title, date, description, language, pathname, image, imageAlt, article, keywords }) {
 	return (
 		<StaticQuery
 			query={seoQuery}
 			render={data => {
 				const seo = {
-					metaDescription: description || data.site.siteMetadata.description,
-					url: `${data.site.siteMetadata.siteUrl}/${pathname}`,
-					image: `${data.site.siteMetadata.siteUrl}${image ||
-						data.favicon.childImageSharp.fixed.src}`,
+					url: `${data.site.siteMetadata.siteUrl}${pathname}`,
+					image: `${data.site.siteMetadata.siteUrl}${image || data.favicon.childImageSharp.fixed.src}`,
 					imageAlt: `${imageAlt || description}`,
-					keywords: keywords.concat(data.site.siteMetadata.keywords)
+					keywords: keywords.concat(data.site.siteMetadata.keywords),
+					lang: language || data.site.siteMetadata.lang,
+					metaDescription: description || data.site.siteMetadata.description
 				};
 
 				// schema.org in JSONLD format
@@ -71,7 +62,7 @@ function SEO({
 					'@type': 'WebPage',
 					url: seo.url,
 					headline: title,
-					inLanguage: lang,
+					inLanguage: seo.lang,
 					description: seo.metaDescription,
 					name: title,
 					author: {
@@ -95,12 +86,11 @@ function SEO({
 					dateModified: data.site.buildTime,
 					image: {
 						'@type': 'ImageObject',
-						url: `${data.site.siteMetadata.siteUrl}${image || data.favicon.childImageSharp.fixed.src}` // eslint-disable-line
+						url: `${data.site.siteMetadata.siteUrl}${image || data.favicon.childImageSharp.fixed.src}`
 					}
 				};
 
 				// Initial breadcrumb list
-
 				const itemListElement = [
 					{
 						'@type': 'ListItem',
@@ -136,13 +126,13 @@ function SEO({
 							name: data.site.siteMetadata.author,
 							logo: {
 								'@type': 'ImageObject',
-								url: `${data.site.siteMetadata.siteUrl}${data.favicon.childImageSharp.fixed.src}` // eslint-disable-line
+								url: `${data.site.siteMetadata.siteUrl}${data.favicon.childImageSharp.fixed.src}`
 							}
 						},
 						datePublished: date,
 						description: seo.metaDescription,
 						headline: title,
-						inLanguage: lang,
+						inLanguage: seo.lang,
 						url: seo.url,
 						name: seo.title,
 						image: {
@@ -171,35 +161,17 @@ function SEO({
 				};
 				return (
 					<>
-						<Helmet
-							title={title}
-							titleTemplate={data.site.siteMetadata.titleTemplate}
-						>
-							<html lang={lang} />
+						<Helmet title={title} titleTemplate={data.site.siteMetadata.titleTemplate}>
+							<html lang={seo.lang} />
 							<meta name="description" content={seo.metaDescription} />
-							<meta
-								name="google-site-verification"
-								content={data.site.siteMetadata.verification.google}
-							/>
-							<meta
-								name="msvalidate.01"
-								content={data.site.siteMetadata.verification.bing}
-							/>
+							<meta name="google-site-verification" content={data.site.siteMetadata.verification.google} />
+							<meta name="msvalidate.01" content={data.site.siteMetadata.verification.bing} />
 							<meta name="keywords" content={seo.keywords} />
+
 							{/* Insert schema.org data conditionally (webpage/article) + everytime (breadcrumbs) */}
-							{!article && (
-								<script type="application/ld+json">
-									{JSON.stringify(schemaOrgWebPage)}
-								</script>
-							)}
-							{article && (
-								<script type="application/ld+json">
-									{JSON.stringify(schemaArticle)}
-								</script>
-							)}
-							<script type="application/ld+json">
-								{JSON.stringify(breadcrumb)}
-							</script>
+							{!article && <script type="application/ld+json">{JSON.stringify(schemaOrgWebPage)}</script>}
+							{article && <script type="application/ld+json">{JSON.stringify(schemaArticle)}</script>}
+							<script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
 						</Helmet>
 						<Facebook
 							title={title}
@@ -219,7 +191,7 @@ function SEO({
 }
 
 SEO.defaultProps = {
-	lang: `en`,
+	language: null,
 	pathname: null,
 	image: null,
 	imageAlt: null,
@@ -230,7 +202,7 @@ SEO.defaultProps = {
 SEO.propTypes = {
 	title: PropTypes.string.isRequired,
 	description: PropTypes.string,
-	lang: PropTypes.string,
+	language: PropTypes.string,
 	pathname: PropTypes.string,
 	image: PropTypes.string,
 	imageAlt: PropTypes.string,

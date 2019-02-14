@@ -6,6 +6,7 @@ const config = {
 	siteKeywords: `ux design, front-end development, gatsbyjs, html, css, js, react, static, jamstack`,
 	siteUrl: `https://jcock.rocks`,
 	author: `Jason Cockerham`,
+	lang: `en`,
 	themeColor: `#000`,
 	backgroundColor: `#fff`,
 

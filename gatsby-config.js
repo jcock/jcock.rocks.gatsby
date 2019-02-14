@@ -3,6 +3,7 @@ const config = require('./app-config');
 module.exports = {
 	pathPrefix: config.pathPrefix === '' ? '/' : config.pathPrefix,
 	siteMetadata: {
+		lang: config.lang,
 		title: config.siteTitle,
 		titleTemplate: `%s | ${config.siteTitle}`,
 		author: config.author,
