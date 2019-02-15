@@ -4,7 +4,8 @@ title: The Fallen Time
 slug: the-fallen-time
 description: We all hate getting caught up in the fury of a moment and making an ass of ourselves. Luckily, there are some simple steps you can take to make sure this doesn't happen again.
 tags: [the, fallen, time, something, cool]
-featured_image: car.jpg
+datatype: Article
+featuredImage: featured.jpg
 ---
 # Autolyci eminus retenta
 

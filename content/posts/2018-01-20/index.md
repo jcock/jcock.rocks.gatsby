@@ -4,7 +4,8 @@ title: Large Post
 slug: large-post
 description: We all hate getting caught up in the fury of a moment and making an ass of ourselves. Luckily, there are some simple steps you can take to make sure this doesn't happen again.
 tags: [the, fallen, time, something, cool]
-image: ./car.jpg
+dataType: Article
+featuredImage: featured.jpg
 ---
 # NOTE: This "post" is based on [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and is meant to test styling of Markdown generated documents
 

@@ -4,8 +4,9 @@ title: Bold Mage
 slug: bold-mage
 description: We all hate getting caught up in the fury of a moment and making an ass of ourselves. Luckily, there are some simple steps you can take to make sure this doesn't happen again.
 tags: [the, fallen, time, something, cool]
-image: ./car.jpg
+dataType: Article
 ---
+
 # Quanto et ius coniunctis urbes
 
 ## Sedisti civiliter

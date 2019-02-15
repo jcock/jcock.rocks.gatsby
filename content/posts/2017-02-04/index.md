@@ -4,7 +4,8 @@ title: The Fairy's Witches
 slug: the-fairys-witches
 description: We all hate getting caught up in the fury of a moment and making an ass of ourselves. Luckily, there are some simple steps you can take to make sure this doesn't happen again.
 tags: [the, fallen, time, something, cool]
-image: ./car.jpg
+datatype: Article
+featuredImage: featured.jpg
 ---
 # Eram mora tuas in inter ferens caterva
 

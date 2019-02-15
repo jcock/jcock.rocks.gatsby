@@ -11,22 +11,26 @@ class PostTemplate extends React.Component {
 		const post = this.props.data.markdownRemark;
 		const url = this.props.location;
 		const siteTitle = this.props.data.site.siteMetadata.title;
+		const featuredImg = post.frontmatter.featuredImage;
 		const { previous, next } = this.props.pageContext;
 
 		return (
 			<Layout location={url} title={siteTitle}>
 				<SEO
+					date={post.frontmatter.date}
 					title={post.frontmatter.title}
 					description={post.frontmatter.description ? post.frontmatter.description : post.excerpt}
-					image={post.frontmatter.featured_image.childImageSharp.fixed.src}
+					image={featuredImg ? featuredImg.childImageSharp.fixed.src : ''}
 					pathname={post.fields.slug}
 					keywords={post.frontmatter.tags}
-					article
+					type={post.frontmatter.dataType}
 				/>
 				<article>
 					<h1>{post.frontmatter.title}</h1>
 					<p>{post.frontmatter.date}</p>
-					<Img fluid={post.frontmatter.featured_image.childImageSharp.fluid} alt={post.frontmatter.title} fadeIn />
+
+					{featuredImg && <Img fluid={featuredImg.childImageSharp.fluid} alt={post.frontmatter.title} fadeIn />}
+
 					<div dangerouslySetInnerHTML={{ __html: post.html }} />
 					<hr />
 					<Bio />
@@ -71,7 +75,8 @@ export const postQuery = graphql`
 				title
 				description
 				tags
-				featured_image {
+				dataType
+				featuredImage {
 					publicURL
 					childImageSharp {
 						fluid(maxWidth: 1920) {

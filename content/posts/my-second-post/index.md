@@ -4,7 +4,8 @@ title: My Second Post!
 slug: my-second-post
 description: We all hate getting caught up in the fury of a moment and making an ass of ourselves. Luckily, there are some simple steps you can take to make sure this doesn't happen again.
 tags: [the, fallen, time, something, cool]
-image: ./car.jpg
+dataType: CreativeWork
+featuredImage: featured.jpg
 ---
 
 Wow! I love blogging so much already.

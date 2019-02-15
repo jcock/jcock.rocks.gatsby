@@ -4,7 +4,8 @@ title: New Beginnings
 slug: new-beginnings
 description: We all hate getting caught up in the fury of a moment and making an ass of ourselves. Luckily, there are some simple steps you can take to make sure this doesn't happen again.
 tags: [the, fallen, time, something, cool]
-image: ./car.jpg
+dataType: CreativeWork
+featuredImage: featured.jpg
 ---
 
 Far far away, behind the word mountains, far from the countries Vokalia and
