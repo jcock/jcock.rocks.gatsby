@@ -8,18 +8,18 @@ import SEO from '../components/SEO';
 
 class PostTemplate extends React.Component {
 	render() {
-		const post = this.props.data.markdownRemark;
 		const url = this.props.location;
-		const siteTitle = this.props.data.site.siteMetadata.title;
+		const post = this.props.data.markdownRemark;
+		const description = post.frontmatter.description ? post.frontmatter.description : post.excerpt;
 		const featuredImg = post.frontmatter.featuredImage;
 		const { previous, next } = this.props.pageContext;
 
 		return (
-			<Layout location={url} title={siteTitle}>
+			<Layout location={url}>
 				<SEO
 					date={post.frontmatter.date}
 					title={post.frontmatter.title}
-					description={post.frontmatter.description ? post.frontmatter.description : post.excerpt}
+					description={description}
 					image={featuredImg ? featuredImg.childImageSharp.fixed.src : ''}
 					pathname={post.fields.slug}
 					keywords={post.frontmatter.tags}

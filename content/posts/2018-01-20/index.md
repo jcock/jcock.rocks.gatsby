@@ -6,6 +6,7 @@ description: We all hate getting caught up in the fury of a moment and making an
 tags: [the, fallen, time, something, cool]
 dataType: Article
 featuredImage: featured.jpg
+featuredImageAlt: Shit
 ---
 # NOTE: This "post" is based on [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and is meant to test styling of Markdown generated documents
 

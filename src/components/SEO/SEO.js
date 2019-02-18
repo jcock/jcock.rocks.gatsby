@@ -13,6 +13,7 @@ const seoQuery = graphql`
 			siteMetadata {
 				author
 				title
+				titleTemplate
 				description
 				keywords
 				lang
@@ -22,8 +23,6 @@ const seoQuery = graphql`
 					twitter
 					fbAppId
 				}
-				title
-				titleTemplate
 				verification {
 					google
 					bing
@@ -46,13 +45,15 @@ function SEO({ title, date, description, pathname, image, imageAlt, type, keywor
 			query={seoQuery}
 			render={data => {
 				const seo = {
-					name: `${title || data.site.siteMetadata.title}`,
+					// title: title || data.site.siteMetadata.title,
+					title: title || data.site.siteMetadata.title,
+					titleTemplate: `${title && data.site.siteMetadata.titleTemplate}`,
 					datePublished: `${date || data.site.buildTime}`,
 					image: `${data.site.siteMetadata.siteUrl}${image || data.favicon.childImageSharp.fixed.src}`,
-					imageAlt: `${imageAlt || description}`,
+					imageAlt: imageAlt || description,
 					keywords: keywords.concat(data.site.siteMetadata.keywords),
-					metaDescription: `${description || data.site.siteMetadata.description}`,
-					pageType: `${type || 'WebPage'}`,
+					description: description || data.site.siteMetadata.description,
+					pageType: type || 'WebPage',
 					url: `${data.site.siteMetadata.siteUrl}${pathname || '/'}`
 				};
 
@@ -80,8 +81,8 @@ function SEO({ title, date, description, pathname, image, imageAlt, type, keywor
 						}
 					},
 					datePublished: seo.datePublished,
-					description: seo.metaDescription,
-					headline: title,
+					description: seo.description,
+					headline: seo.title,
 					image: {
 						'@type': 'ImageObject',
 						url: seo.image
@@ -112,7 +113,7 @@ function SEO({ title, date, description, pathname, image, imageAlt, type, keywor
 						'@type': 'ListItem',
 						item: {
 							'@id': seo.url,
-							name: title
+							name: seo.title
 						},
 						position: 2
 					});
@@ -127,9 +128,9 @@ function SEO({ title, date, description, pathname, image, imageAlt, type, keywor
 				};
 				return (
 					<>
-						<Helmet title={title} titleTemplate={data.site.siteMetadata.titleTemplate}>
+						<Helmet title={seo.title} titleTemplate={seo.titleTemplate}>
 							<html lang={data.site.siteMetadata.lang} />
-							<meta name="description" content={seo.metaDescription} />
+							<meta name="description" content={seo.description} />
 							<meta name="google-site-verification" content={data.site.siteMetadata.verification.google} />
 							<meta name="msvalidate.01" content={data.site.siteMetadata.verification.bing} />
 							<meta name="keywords" content={seo.keywords} />
@@ -139,8 +140,8 @@ function SEO({ title, date, description, pathname, image, imageAlt, type, keywor
 							<script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
 						</Helmet>
 						<Facebook
-							title={title}
-							description={seo.metaDescription}
+							title={seo.title}
+							description={seo.description}
 							type={type === 'Article' ? 'article' : 'website'}
 							pageUrl={seo.url}
 							image={seo.image}
@@ -156,6 +157,7 @@ function SEO({ title, date, description, pathname, image, imageAlt, type, keywor
 }
 
 SEO.defaultProps = {
+	title: null,
 	description: null,
 	date: null,
 	pathname: null,
@@ -166,7 +168,7 @@ SEO.defaultProps = {
 };
 
 SEO.propTypes = {
-	title: PropTypes.string.isRequired,
+	title: PropTypes.string,
 	date: PropTypes.string,
 	description: PropTypes.string,
 	pathname: PropTypes.string,

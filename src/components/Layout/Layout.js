@@ -8,14 +8,19 @@ import style from './Layout.module.css';
 
 class Layout extends React.Component {
 	render() {
-		const { title, children } = this.props;
+		const { children } = this.props;
 
 		return (
 			<>
 				<SkipLink href="#start-of-content">Skip to content</SkipLink>
 				<header>
 					<h1 className={style.title}>
-						<Link to="/">{title}</Link>
+						<Link to="/">
+							jcock.rocks
+							<span role="img" aria-label="Rock on!">
+								🤘
+							</span>
+						</Link>
 					</h1>
 				</header>
 				<main id="start-of-content">{children}</main>
