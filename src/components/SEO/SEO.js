@@ -45,7 +45,6 @@ function SEO({ title, date, description, pathname, image, imageAlt, type, keywor
 			query={seoQuery}
 			render={data => {
 				const seo = {
-					// title: title || data.site.siteMetadata.title,
 					title: title || data.site.siteMetadata.title,
 					titleTemplate: `${title && data.site.siteMetadata.titleTemplate}`,
 					datePublished: `${date || data.site.buildTime}`,
@@ -157,7 +156,6 @@ function SEO({ title, date, description, pathname, image, imageAlt, type, keywor
 }
 
 SEO.defaultProps = {
-	title: null,
 	description: null,
 	date: null,
 	pathname: null,
