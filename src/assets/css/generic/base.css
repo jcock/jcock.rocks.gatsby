@@ -10,6 +10,12 @@ body {
 	font-size: calc(var(--fontSizeBase) + 0.25vw);
 	font-weight: var(--fontWeightBase);
 	line-height: var(--lineHeightBase);
+
+	@media (prefers-color-scheme: dark) {
+		/* Dark Mode */
+		background-color: var(--grayDarkest);
+		color: var(--white);
+	}
 }
 
 ::selection {

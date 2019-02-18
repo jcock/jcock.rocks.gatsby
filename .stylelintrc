@@ -31,7 +31,13 @@
 					"include"
         ]
       }
-    ],
+		],
+		"media-feature-name-no-unknown": [
+			true,
+			{
+				"ignoreMediaFeatureNames": ["prefers-color-scheme"]
+			}
+		],
     "media-feature-name-no-vendor-prefix": true,
     "no-missing-end-of-source-newline": true,
     "property-no-unknown": true,
@@ -40,7 +46,7 @@
       "^[a-z0-9\\-]+$",
       {
         "message":
-          "Selector should be written in lowercase with hyphens (selector-class-pattern)"
+        "Selector should be written in lowercase with hyphens (selector-class-pattern)"
       }
     ],
     "selector-max-compound-selectors": 3,
