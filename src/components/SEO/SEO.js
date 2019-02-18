@@ -70,7 +70,7 @@ function SEO({ title, date, description, pathname, image, imageAlt, type, keywor
 						'@type': 'Person',
 						name: data.site.siteMetadata.author
 					},
-					copyrightYear: '2019',
+					copyrightYear: `${new Date().getFullYear()}`,
 					creator: {
 						'@type': 'Person',
 						name: data.site.siteMetadata.author,

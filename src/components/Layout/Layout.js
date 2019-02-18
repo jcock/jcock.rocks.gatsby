@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
+import SkipLink from '../Navigation/SkipLink';
+
 import '../../assets/css/app.css';
 import style from './Layout.module.css';
 
@@ -10,9 +12,7 @@ class Layout extends React.Component {
 
 		return (
 			<>
-				<a href="#start-of-content" className="sr focusable">
-					Skip to content
-				</a>
+				<SkipLink href="#start-of-content">Skip to content</SkipLink>
 				<header>
 					<h1 className={style.title}>
 						<Link to="/">{title}</Link>
