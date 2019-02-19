@@ -166,7 +166,7 @@ SEO.defaultProps = {
 };
 
 SEO.propTypes = {
-	title: PropTypes.string,
+	title: PropTypes.string.isRequired,
 	date: PropTypes.string,
 	description: PropTypes.string,
 	pathname: PropTypes.string,
