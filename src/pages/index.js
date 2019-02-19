@@ -1,34 +1,22 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import Bio from '../components/Bio';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
+import PageList from '../components/PageList';
 
 class AppIndex extends React.Component {
 	render() {
 		const { data } = this.props;
 		const url = data.location;
-		const posts = data.allMarkdownRemark.edges;
+		const postEdges = data.allMarkdownRemark.edges;
 
 		return (
 			<Layout location={url}>
 				<SEO title="" />
 				<Bio />
-				<ol reversed>
-					{posts.map(({ node }) => {
-						const title = node.frontmatter.title || node.fields.slug;
-						return (
-							<li key={node.fields.slug}>
-								<h2>
-									<Link to={node.fields.slug}>{title}</Link>
-								</h2>
-								<p>{node.frontmatter.date}</p>
-								<p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-							</li>
-						);
-					})}
-				</ol>
+				<PageList postEdges={postEdges} />
 			</Layout>
 		);
 	}

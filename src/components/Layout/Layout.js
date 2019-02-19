@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
+import Footer from '../Footer';
 import SkipLink from '../Navigation/SkipLink';
 
 import '../../assets/css/app.css';
@@ -24,13 +25,7 @@ class Layout extends React.Component {
 					</h1>
 				</header>
 				<main id="start-of-content">{children}</main>
-				<footer>
-					<p>
-						&copy; {new Date().getFullYear()}.Built with
-						{` `}
-						<a href="https://www.gatsbyjs.org">Gatsby</a>
-					</p>
-				</footer>
+				<Footer />
 			</>
 		);
 	}
