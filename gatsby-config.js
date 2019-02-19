@@ -61,7 +61,7 @@ module.exports = {
 				icons: config.icons
 			}
 		},
-		// `gatsby-plugin-offline`,
+		`gatsby-plugin-offline`,
 		`gatsby-plugin-postcss`,
 		{
 			resolve: `gatsby-plugin-purgecss`,
