@@ -61,7 +61,7 @@ module.exports = {
 				icons: config.icons
 			}
 		},
-		`gatsby-plugin-offline`,
+		// `gatsby-plugin-offline`,
 		`gatsby-plugin-postcss`,
 		{
 			resolve: `gatsby-plugin-purgecss`,
@@ -82,6 +82,12 @@ module.exports = {
 					},
 					`gatsby-remark-responsive-iframe`,
 					`gatsby-remark-prismjs`,
+					// {
+					// 	resolve: `gatsby-remark-prismjs`,
+					// 	options: {
+					// 		showLineNumbers: true
+					// 	}
+					// },
 					`gatsby-remark-copy-linked-files`,
 					`gatsby-remark-smartypants`
 				]
@@ -91,6 +97,7 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		`gatsby-plugin-sitemap`,
+		`gatsby-plugin-netlify-cache`,
 		`gatsby-plugin-netlify` // Must be last in the plugins array
 	]
 };
