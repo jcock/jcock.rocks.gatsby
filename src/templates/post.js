@@ -1,56 +1,51 @@
 import React from 'react';
-import Img from 'gatsby-image';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
-import Bio from '../components/Bio';
+import FeaturedImage from '../components/FeaturedImage';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
+import SiblingsNav from '../components/Navigation/SiblingsNav';
 
 class PostTemplate extends React.Component {
 	render() {
 		const url = this.props.location;
-		const post = this.props.data.markdownRemark;
-		const description = post.frontmatter.description ? post.frontmatter.description : post.excerpt;
-		const featuredImg = post.frontmatter.featuredImage;
+		const page = this.props.data.markdownRemark;
+		const description = page.frontmatter.description ? page.frontmatter.description : page.excerpt;
+		const featuredImg = page.frontmatter.featuredImage;
 		const { previous, next } = this.props.pageContext;
+
+		const siblings = {
+			prevLocation: previous && previous.fields.slug,
+			prevTitle: previous && previous.frontmatter.title,
+			nextLocation: next && next.fields.slug,
+			nextTitle: next && next.frontmatter.title
+		};
 
 		return (
 			<Layout location={url}>
 				<SEO
-					date={post.frontmatter.date}
-					title={post.frontmatter.title}
+					date={page.frontmatter.date}
+					title={page.frontmatter.title}
 					description={description}
 					image={featuredImg ? featuredImg.childImageSharp.fixed.src : ''}
-					pathname={post.fields.slug}
-					keywords={post.frontmatter.tags}
-					type={post.frontmatter.dataType}
+					pathname={page.fields.slug}
+					keywords={page.frontmatter.tags}
+					type={page.frontmatter.dataType}
 				/>
 				<article>
-					<h1>{post.frontmatter.title}</h1>
-					<p>{post.frontmatter.date}</p>
+					<h1>{page.frontmatter.title}</h1>
+					<p>{page.frontmatter.date}</p>
 
-					{featuredImg && <Img fluid={featuredImg.childImageSharp.fluid} alt={post.frontmatter.title} fadeIn />}
+					<FeaturedImage fluid={featuredImg.childImageSharp.fluid} alt={page.frontmatter.title} />
 
-					<div dangerouslySetInnerHTML={{ __html: post.html }} />
-					<hr />
-					<Bio />
+					<div dangerouslySetInnerHTML={{ __html: page.html }} />
 
-					<ul>
-						{previous && (
-							<li>
-								<Link to={previous.fields.slug} rel="prev">
-									← {previous.frontmatter.title}
-								</Link>
-							</li>
-						)}
-						{next && (
-							<li>
-								<Link to={next.fields.slug} rel="next">
-									{next.frontmatter.title} →
-								</Link>
-							</li>
-						)}
-					</ul>
+					<SiblingsNav
+						prevLocation={siblings.prevLocation}
+						prevTitle={siblings.prevTitle}
+						nextLocation={siblings.nextLocation}
+						nextTitle={siblings.nextTitle}
+					/>
 				</article>
 			</Layout>
 		);
