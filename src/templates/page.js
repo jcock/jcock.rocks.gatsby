@@ -36,7 +36,7 @@ class PageTemplate extends React.Component {
 					<h1>{page.frontmatter.title}</h1>
 					<p>{page.frontmatter.date}</p>
 
-					<FeaturedImage fluid={featuredImg.childImageSharp.fluid} alt={page.frontmatter.title} />
+					{featuredImg && <FeaturedImage fluid={featuredImg.childImageSharp.fluid} alt={page.frontmatter.title} />}
 
 					<div dangerouslySetInnerHTML={{ __html: page.html }} />
 
