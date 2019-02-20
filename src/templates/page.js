@@ -33,21 +33,20 @@ class PageTemplate extends React.Component {
 					keywords={page.frontmatter.tags}
 					type={page.frontmatter.dataType}
 				/>
-				<article>
-					<h1>{page.frontmatter.title}</h1>
-					<p>{page.frontmatter.date}</p>
 
-					{featuredImg && <FeaturedImage fluid={featuredImg.childImageSharp.fluid} alt={page.frontmatter.title} />}
+				<h1>{page.frontmatter.title}</h1>
+				<p>{page.frontmatter.date}</p>
 
-					<div dangerouslySetInnerHTML={{ __html: page.html }} />
+				{featuredImg && <FeaturedImage fluid={featuredImg.childImageSharp.fluid} alt={page.frontmatter.title} />}
 
-					<SiblingsNav
-						prevLocation={siblings.prevLocation}
-						prevTitle={siblings.prevTitle}
-						nextLocation={siblings.nextLocation}
-						nextTitle={siblings.nextTitle}
-					/>
-				</article>
+				<div dangerouslySetInnerHTML={{ __html: page.html }} />
+
+				<SiblingsNav
+					prevLocation={siblings.prevLocation}
+					prevTitle={siblings.prevTitle}
+					nextLocation={siblings.nextLocation}
+					nextTitle={siblings.nextTitle}
+				/>
 			</Layout>
 		);
 	}
