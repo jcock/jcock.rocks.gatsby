@@ -5,7 +5,7 @@
 
 @import "./variables.css";
 
-/* Generic */
+/* Global */
 @import "./global/remedy.css";
 @import "./global/base.css";
 @import "./global/link.css";
