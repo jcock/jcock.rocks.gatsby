@@ -6,13 +6,13 @@
 @import "./variables.css";
 
 /* Generic */
-@import "./generic/remedy.css";
-@import "./generic/base.css";
-@import "./generic/link.css";
+@import "./global/remedy.css";
+@import "./global/base.css";
+@import "./global/link.css";
 
 /* Utilities */
 @import "./utilities/hide.css";
 @import "./utilities/link-expand.css";
 
 /* Print */
-@import "./generic/print.css";
+@import "./global/print.css";
