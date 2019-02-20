@@ -6,6 +6,7 @@ description: We all hate getting caught up in the fury of a moment and making an
 tags: [the, fallen, time, something, cool]
 dataType: CreativeWork
 featuredImage: featured.jpg
+featuredImageAlt: This is the featured image alt text.
 ---
 
 Wow! I love blogging so much already.

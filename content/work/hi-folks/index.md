@@ -6,6 +6,7 @@ description: We all hate getting caught up in the fury of a moment and making an
 tags: [the, fallen, time, something, cool]
 dataType: CreativeWork
 featuredImage: featured.jpg
+featuredImageAlt: This is the featured image alt text.
 ---
 
 Far far away, behind the word mountains, far from the countries Vokalia and

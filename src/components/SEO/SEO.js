@@ -45,14 +45,23 @@ function SEO({ title, date, description, pathname, image, imageAlt, type, keywor
 			query={seoQuery}
 			render={data => {
 				const seo = {
+					// Use title passed in from template/component or fallback to site title as defined in config. [schema, meta tags]
 					title: title || data.site.siteMetadata.title,
+					// If title has been passed in, use titleTemplate as defined in config. [meta tags]
 					titleTemplate: `${title && data.site.siteMetadata.titleTemplate}`,
-					datePublished: `${date || data.site.buildTime}`,
-					image: `${data.site.siteMetadata.siteUrl}${image || data.favicon.childImageSharp.fixed.src}`,
-					imageAlt: imageAlt || description,
+					// Concat any keywords pass in, to site keywords as defined in config. [meta tags]
 					keywords: keywords.concat(data.site.siteMetadata.keywords),
+					// Use description passed in from template/component or fallback to site description as defined in config. [schema, meta tags]
 					description: description || data.site.siteMetadata.description,
+					// If an image has been passed in, use it, else, fall back to preprocessed favicon starter image (1500x1500). [schema, meta tags]
+					image: `${data.site.siteMetadata.siteUrl}${image || data.favicon.childImageSharp.fixed.src}`,
+					// If an image has been passed in, if defined, use imageAlt, else, fallback to title, then description. If not, use site title as defined in config. [schema, meta tags]
+					imageAlt: `${image ? imageAlt || title || description : data.site.siteMetadata.title}`,
+					// Use date passed in from template/component or fallback to last buildTime. [schema]
+					datePublished: `${date || data.site.buildTime}`,
+					// If a type is passed in, use it, if not, fall back to WebPage. [schema]
 					pageType: type || 'WebPage',
+					// If a pathname has been passed in, append it to the siteUrl defined in config. If not, fall back to /. [schema, meta tags]
 					url: `${data.site.siteMetadata.siteUrl}${pathname || '/'}`
 				};
 
@@ -76,7 +85,8 @@ function SEO({ title, date, description, pathname, image, imageAlt, type, keywor
 						name: data.site.siteMetadata.author,
 						logo: {
 							'@type': 'ImageObject',
-							url: `${data.site.siteMetadata.siteUrl}${data.favicon.childImageSharp.fixed.src}`
+							url: `${data.site.siteMetadata.siteUrl}${data.favicon.childImageSharp.fixed.src}`,
+							alt: data.site.siteMetadata.title
 						}
 					},
 					datePublished: seo.datePublished,
@@ -84,7 +94,8 @@ function SEO({ title, date, description, pathname, image, imageAlt, type, keywor
 					headline: seo.title,
 					image: {
 						'@type': 'ImageObject',
-						url: seo.image
+						url: seo.image,
+						alt: seo.imageAlt
 					},
 					inLanguage: data.site.siteMetadata.lang,
 					mainEntityOfPage: seo.url,
@@ -130,9 +141,9 @@ function SEO({ title, date, description, pathname, image, imageAlt, type, keywor
 						<Helmet title={seo.title} titleTemplate={seo.titleTemplate}>
 							<html lang={data.site.siteMetadata.lang} />
 							<meta name="description" content={seo.description} />
+							<meta name="keywords" content={seo.keywords} />
 							<meta name="google-site-verification" content={data.site.siteMetadata.verification.google} />
 							<meta name="msvalidate.01" content={data.site.siteMetadata.verification.bing} />
-							<meta name="keywords" content={seo.keywords} />
 
 							{/* Insert schema.org data conditionally (webpage/creativeWork/article) + everytime (breadcrumbs) */}
 							<script type="application/ld+json">{JSON.stringify(schema)}</script>

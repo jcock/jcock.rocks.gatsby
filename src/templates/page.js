@@ -27,7 +27,8 @@ class PageTemplate extends React.Component {
 					date={page.frontmatter.date}
 					title={page.frontmatter.title}
 					description={description}
-					image={featuredImg ? featuredImg.childImageSharp.fixed.src : ''}
+					image={featuredImg && featuredImg.childImageSharp.fixed.src}
+					imageAlt={featuredImg && page.frontmatter.featuredImageAlt}
 					pathname={page.fields.slug}
 					keywords={page.frontmatter.tags}
 					type={page.frontmatter.dataType}
@@ -71,6 +72,7 @@ export const pageQuery = graphql`
 				description
 				tags
 				dataType
+				featuredImageAlt
 				featuredImage {
 					publicURL
 					childImageSharp {
