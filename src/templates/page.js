@@ -8,7 +8,6 @@ import SiblingsNav from '../components/Navigation/SiblingsNav';
 
 class PageTemplate extends React.Component {
 	render() {
-		const url = this.props.location;
 		const page = this.props.data.markdownRemark;
 		const description = page.frontmatter.description ? page.frontmatter.description : page.excerpt;
 		const featuredImg = page.frontmatter.featuredImage;
@@ -22,7 +21,7 @@ class PageTemplate extends React.Component {
 		};
 
 		return (
-			<Layout location={url}>
+			<Layout>
 				<SEO
 					date={page.frontmatter.date}
 					title={page.frontmatter.title}

@@ -9,11 +9,10 @@ import PageList from '../components/PageList';
 class AppIndex extends React.Component {
 	render() {
 		const { data } = this.props;
-		const url = data.location;
 		const postEdges = data.allMarkdownRemark.edges;
 
 		return (
-			<Layout location={url}>
+			<Layout>
 				<SEO title="" />
 				<Bio />
 				<PageList postEdges={postEdges} />
