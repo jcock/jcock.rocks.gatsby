@@ -42,13 +42,6 @@
     "no-missing-end-of-source-newline": true,
     "property-no-unknown": true,
     "property-no-vendor-prefix": true,
-    "selector-class-pattern": [
-      "^[a-z0-9\\-]+$",
-      {
-        "message":
-        "Selector should be written in lowercase with hyphens (selector-class-pattern)"
-      }
-    ],
     "selector-max-compound-selectors": 3,
     "selector-max-id": 0,
     "selector-no-qualifying-type": [
