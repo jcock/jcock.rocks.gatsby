@@ -1,6 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+
 import style from './Bio.module.css';
 
 const bioQuery = graphql`
