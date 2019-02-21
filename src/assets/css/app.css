@@ -15,4 +15,4 @@
 @import "./utilities/link-expand.css";
 
 /* Print */
-@import "./global/print.css";
+@import "./utilities/print.css";
