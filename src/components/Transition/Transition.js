@@ -20,8 +20,7 @@ class Transition extends React.PureComponent {
 			},
 			exit: {
 				filter: `blur(20px)`,
-				opacity: 0,
-				transition: { duration: `${duration / 2}` }
+				opacity: 0
 			}
 		});
 
