@@ -1,7 +1,7 @@
 const config = {
 	pathPrefix: `/`,
 	siteTitle: `Jason Cockerham 🤘 Designer and Developer`,
-	siteTitleShort: `jcock`,
+	siteTitleShort: `jcock.rocks 🤘`,
 	siteDescription: `The portfolio of Jason Cockerham, User Experience Designer and Front-End Developer.`,
 	siteKeywords: `ux design, front-end development, gatsbyjs, html, css, js, react, static, jamstack`,
 	siteUrl: `https://jcock.rocks`,

@@ -56,7 +56,7 @@ module.exports = {
 				start_url: config.pathPrefix,
 				background_color: config.backgroundColor,
 				theme_color: config.themeColor,
-				display: `minimal-ui`,
+				display: `standalone`,
 				icon: `${__dirname}/src/assets/${config.logo}`,
 				icons: config.icons
 			}
