@@ -1,4 +1,5 @@
 .transitionContainer {
 	backface-visibility: hidden;
+	overflow: hidden;
 	perspective: 1000;
 }

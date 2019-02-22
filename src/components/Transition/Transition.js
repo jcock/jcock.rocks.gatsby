@@ -16,16 +16,11 @@ class Transition extends React.PureComponent {
 				delayChildren: timeout,
 				filter: `blur(0px)`,
 				opacity: 1,
-				y: 0,
-				transition: {
-					y: { type: 'spring', stiffness: 1000, damping: 15 },
-					duration
-				}
+				transition: { duration }
 			},
 			exit: {
 				filter: `blur(20px)`,
 				opacity: 0,
-				y: 10,
 				transition: { duration: `${duration / 2}` }
 			}
 		});

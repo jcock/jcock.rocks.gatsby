@@ -20,8 +20,8 @@ const config = {
 	},
 
 	// Favicons
-	// Make this image at least 1500x1500
 	// Serves as starting point to generate favicons as well as the default OG image
+	// Make this image at least 1500x1500
 	logo: `img/favicon.png`,
 	icons: [
 		{
