@@ -61,8 +61,7 @@ module.exports = {
 				icons: config.icons
 			}
 		},
-		// `gatsby-plugin-offline`,
-		`gatsby-plugin-remove-serviceworker`,
+		`gatsby-plugin-offline`,
 		`gatsby-plugin-postcss`,
 		{
 			resolve: `gatsby-plugin-purgecss`,
@@ -103,18 +102,6 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-netlify`, // Must be last in the plugins array
 			options: {
-				// allPageHeaders: [
-				// 	'Link: </apple-touch-icon.png>; rel=preload; as=image',
-				// 	'Link: </android-chrome-192x192.png>; rel=preload; as=image',
-				// 	'Link: </android-chrome-256x256.png>; rel=preload; as=image',
-				// 	'Link: </android-chrome-512x512.png>; rel=preload; as=image',
-				// 	'Link: </favicon-16x16.png>; rel=preload; as=image',
-				// 	'Link: </favicon-32x32.png>; rel=preload; as=image',
-				// 	'Link: </mstile-70x70.png>; rel=preload; as=image',
-				// 	'Link: </mstile-150x150.png>; rel=preload; as=image',
-				// 	'Link: </mstile-310x150.png>; rel=preload; as=image',
-				// 	'Link: </manifest.webmanifest>; rel=preload; as=manifest'
-				// ]
 				allPageHeaders: [
 					'Link: href=https://www.google-analytics.com; rel=dns-prefetch',
 					'Link: href=https://www.google.com; rel=preconnect',
