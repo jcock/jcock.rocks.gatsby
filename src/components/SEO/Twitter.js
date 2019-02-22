@@ -1,9 +1,17 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-export default ({ cardType = 'summary_large_image', username = null }) => (
-	<Helmet>
-		<meta name="twitter:card" content={cardType} />
-		{username && <meta name="twitter:creator" content={username} />}
-	</Helmet>
-);
+class Twitter extends React.PureComponent {
+	render() {
+		const { cardType = 'summary_large_image', username = null } = this.props;
+
+		return (
+			<Helmet>
+				<meta name="twitter:card" content={cardType} />
+				{username && <meta name="twitter:creator" content={username} />}
+			</Helmet>
+		);
+	}
+}
+
+export default Twitter;

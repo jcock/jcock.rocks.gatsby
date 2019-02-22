@@ -11,23 +11,25 @@ const footerQuery = graphql`
 	}
 `;
 
-function Footer() {
-	return (
-		<StaticQuery
-			query={footerQuery}
-			render={data => {
-				return (
-					<footer>
-						<p>
-							&copy; {new Date().getFullYear()}. {data.site.siteMetadata.author}. Built with
-							{` `}
-							<a href="https://www.gatsbyjs.org">Gatsby</a>
-						</p>
-					</footer>
-				);
-			}}
-		/>
-	);
+class Footer extends React.PureComponent {
+	render() {
+		return (
+			<StaticQuery
+				query={footerQuery}
+				render={data => {
+					return (
+						<footer>
+							<p>
+								&copy; {new Date().getFullYear()}. {data.site.siteMetadata.author}. Built with
+								{` `}
+								<a href="https://www.gatsbyjs.org">Gatsby</a>
+							</p>
+						</footer>
+					);
+				}}
+			/>
+		);
+	}
 }
 
 export default Footer;

@@ -7,13 +7,13 @@ import SkipLink from '../Navigation/SkipLink';
 import '../../assets/css/app.css';
 import style from './Layout.module.css';
 
-class Layout extends React.Component {
+class Layout extends React.PureComponent {
 	render() {
 		const { children } = this.props;
 
 		return (
 			<>
-				<SkipLink href="#start-of-content">Skip to content</SkipLink>
+				<SkipLink to="#start-of-content">Skip to content</SkipLink>
 				<header>
 					<h1 className={style.title}>
 						<Link to="/">

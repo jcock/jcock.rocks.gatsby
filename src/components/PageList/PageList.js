@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-class PageList extends React.Component {
+class PageList extends React.PureComponent {
 	getPageList() {
 		const pageList = [];
 		this.props.postEdges.forEach(postEdge => {

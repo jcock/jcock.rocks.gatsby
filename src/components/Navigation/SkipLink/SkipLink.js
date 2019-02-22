@@ -1,7 +1,15 @@
 import React from 'react';
 
-export default ({ children, href }) => (
-	<a href={href} className="sr focusable">
-		{children}
-	</a>
-);
+class SkipLink extends React.PureComponent {
+	render() {
+		const { children, to } = this.props;
+
+		return (
+			<a href={to} className="sr focusable">
+				{children}
+			</a>
+		);
+	}
+}
+
+export default SkipLink;
