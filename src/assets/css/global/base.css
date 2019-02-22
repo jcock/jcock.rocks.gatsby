@@ -3,11 +3,15 @@
 * ------------------------------
 */
 
+:root {
+	font-size: calc(1rem + 0.8vmin);
+}
+
 body {
 	background-color: var(--bodyBg);
 	color: var(--bodyColor);
 	font-family: var(--fontFamilyBase);
-	font-size: calc(var(--fontSizeBase) + 0.25vw);
+	font-size: var(--fontSizeBase);
 	font-weight: var(--fontWeightBase);
 	line-height: var(--lineHeightBase);
 
