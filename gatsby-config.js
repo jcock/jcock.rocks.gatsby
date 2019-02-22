@@ -112,7 +112,10 @@ module.exports = {
 					'Link: </mstile-70x70.png>; rel=preload; as=image',
 					'Link: </mstile-150x150.png>; rel=preload; as=image',
 					'Link: </mstile-310x150.png>; rel=preload; as=image',
-					'Link: </manifest.webmanifest>; rel=preload; as=manifest'
+					'Link: </manifest.webmanifest>; rel=preload; as=manifest',
+					'Link: href=https://www.google-analytics.com; rel=dns-prefetch',
+					'Link: href=https://www.google.com; rel=preconnect',
+					'Link: href=https://marketingplatform.google.com; rel=preconnect'
 				]
 			}
 		}
