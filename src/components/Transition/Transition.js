@@ -5,6 +5,7 @@ import style from './Transition.module.css';
 
 const timeout = 300;
 const duration = 600;
+const ease = `easeInOut`;
 
 class Transition extends React.PureComponent {
 	render() {
@@ -17,7 +18,7 @@ class Transition extends React.PureComponent {
 				opacity: 1,
 				transition: {
 					duration,
-					ease: `easeInOut`
+					ease
 				}
 			},
 			exit: {
@@ -26,13 +27,11 @@ class Transition extends React.PureComponent {
 		});
 
 		return (
-			<div>
-				<PoseGroup animateOnMount>
-					<RoutesContainer className={style.transitionContainer} key={location.pathname}>
-						{children}
-					</RoutesContainer>
-				</PoseGroup>
-			</div>
+			<PoseGroup animateOnMount>
+				<RoutesContainer className={style.transitionContainer} key={location.pathname}>
+					{children}
+				</RoutesContainer>
+			</PoseGroup>
 		);
 	}
 }
