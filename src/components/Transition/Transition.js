@@ -15,6 +15,7 @@ class Transition extends React.PureComponent {
 			enter: {
 				delay: timeout,
 				delayChildren: timeout,
+				filter: `blur(0px)`,
 				opacity: 1,
 				transition: {
 					duration,
@@ -22,6 +23,7 @@ class Transition extends React.PureComponent {
 				}
 			},
 			exit: {
+				filter: `blur(4px)`,
 				opacity: 0
 			}
 		});
