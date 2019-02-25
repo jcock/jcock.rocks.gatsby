@@ -14,22 +14,25 @@ class Transition extends React.PureComponent {
 			enter: {
 				delay: timeout,
 				delayChildren: timeout,
-				filter: `blur(0px)`,
 				opacity: 1,
-				transition: { duration }
+				transition: {
+					duration,
+					ease: `easeInOut`
+				}
 			},
 			exit: {
-				filter: `blur(20px)`,
 				opacity: 0
 			}
 		});
 
 		return (
-			<PoseGroup>
-				<RoutesContainer className={style.transitionContainer} key={location.pathname}>
-					{children}
-				</RoutesContainer>
-			</PoseGroup>
+			<div>
+				<PoseGroup animateOnMount>
+					<RoutesContainer className={style.transitionContainer} key={location.pathname}>
+						{children}
+					</RoutesContainer>
+				</PoseGroup>
+			</div>
 		);
 	}
 }
