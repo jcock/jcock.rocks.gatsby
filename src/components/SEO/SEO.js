@@ -145,6 +145,11 @@ class SEO extends React.PureComponent {
 								<html lang={data.site.siteMetadata.lang} />
 								<meta name="description" content={seo.description} />
 								<meta name="keywords" content={seo.keywords} />
+
+								<meta content={data.site.siteMetadata.siteTitle} name="apple-mobile-web-app-title" />
+								<meta content="yes" name="apple-mobile-web-app-capable" />
+								<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style" />
+
 								<meta name="google-site-verification" content={data.site.siteMetadata.verification.google} />
 								<meta name="msvalidate.01" content={data.site.siteMetadata.verification.bing} />
 

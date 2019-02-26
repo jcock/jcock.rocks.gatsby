@@ -38,6 +38,7 @@ module.exports = {
 				name: config.siteTitle,
 				short_name: config.siteTitleShort,
 				description: config.siteDescription,
+				dir: `auto`,
 				start_url: config.pathPrefix,
 				background_color: config.backgroundColor,
 				theme_color: config.themeColor,
