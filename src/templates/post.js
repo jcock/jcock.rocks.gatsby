@@ -56,12 +56,6 @@ export default PostTemplate;
 
 export const postQuery = graphql`
 	query PostQuery($slug: String!) {
-		site {
-			siteMetadata {
-				title
-				author
-			}
-		}
 		markdownRemark(fields: { slug: { eq: $slug } }) {
 			excerpt(pruneLength: 160)
 			html

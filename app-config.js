@@ -1,14 +1,17 @@
+const title = `Jason Cockerham 🤘 Designer and Developer`;
+
 const config = {
 	pathPrefix: `/`,
-	siteTitle: `Jason Cockerham 🤘 Designer and Developer`,
+	siteTitle: title,
 	siteTitleShort: `jcock.rocks 🤘`,
-	siteDescription: `The portfolio of Jason Cockerham, User Experience Designer and Front-End Developer.`,
+	titleTemplate: `%s | ${title}`,
+	siteDescription: `The portfolio of Jason Cockerham, digital designer, developer, and maker of internets.`,
 	siteKeywords: `ux design, front-end development, gatsbyjs, html, css, js, react, static, jamstack`,
 	siteUrl: `https://jcock.rocks`,
 	author: `Jason Cockerham`,
 	lang: `en`,
 	themeColor: `#000`,
-	backgroundColor: `#fff`,
+	backgroundColor: `#000`,
 
 	// Analytics
 	googleAnalyticsID: `UA-54478957-1`,
@@ -35,18 +38,8 @@ const config = {
 			type: `image/png`
 		},
 		{
-			src: `/android-chrome-256x256.png`,
-			sizes: `256x256`,
-			type: `image/png`
-		},
-		{
 			src: `/android-chrome-512x512.png`,
 			sizes: `512x512`,
-			type: `image/png`
-		},
-		{
-			src: `/favicon-32x32.png`,
-			sizes: `32x32`,
 			type: `image/png`
 		},
 		{
@@ -55,8 +48,8 @@ const config = {
 			type: `image/png`
 		},
 		{
-			src: `/mstile-70x70.png`,
-			sizes: `70x70`,
+			src: `/favicon-32x32.png`,
+			sizes: `32x32`,
 			type: `image/png`
 		},
 		{
@@ -65,13 +58,13 @@ const config = {
 			type: `image/png`
 		},
 		{
-			src: `/mstile-310x150.png`,
-			sizes: `310x150`,
+			src: `/mstile-310x310.png`,
+			sizes: `310x310`,
 			type: `image/png`
 		},
 		{
 			src: `/mstile-310x150.png`,
-			sizes: `310x310`,
+			sizes: `310x150`,
 			type: `image/png`
 		}
 	],

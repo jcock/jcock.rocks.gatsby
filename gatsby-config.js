@@ -3,22 +3,7 @@ const config = require('./app-config');
 module.exports = {
 	pathPrefix: config.pathPrefix === '' ? '/' : config.pathPrefix,
 	siteMetadata: {
-		lang: config.lang,
-		title: config.siteTitle,
-		titleTemplate: `%s | ${config.siteTitle}`,
-		author: config.author,
-		description: config.siteDescription,
-		keywords: config.siteKeywords,
-		siteUrl: config.siteUrl,
-		logo: config.logo,
-		verification: {
-			google: config.verification.google,
-			bing: config.verification.bing
-		},
-		social: {
-			twitter: config.social.twitter,
-			fbAppId: config.social.fbAppId
-		}
+		...config
 	},
 	plugins: [
 		{

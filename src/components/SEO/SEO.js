@@ -12,10 +12,10 @@ const seoQuery = graphql`
 			pathPrefix
 			siteMetadata {
 				author
-				title
+				siteTitle
 				titleTemplate
-				description
-				keywords
+				siteDescription
+				siteKeywords
 				lang
 				logo
 				siteUrl
@@ -49,13 +49,13 @@ class SEO extends React.PureComponent {
 				render={data => {
 					const seo = {
 						// Use title passed in from template/component or fallback to site title as defined in config. [schema, meta tags]
-						title: title || data.site.siteMetadata.title,
+						title: title || data.site.siteMetadata.siteTitle,
 						// If title has been passed in, use titleTemplate as defined in config. [meta tags]
 						titleTemplate: `${title && data.site.siteMetadata.titleTemplate}`,
 						// Concat any keywords pass in, to site keywords as defined in config. [meta tags]
-						keywords: keywords.concat(data.site.siteMetadata.keywords),
+						keywords: keywords.concat(data.site.siteMetadata.siteKeywords),
 						// Use description passed in from template/component or fallback to site description as defined in config. [schema, meta tags]
-						description: description || data.site.siteMetadata.description,
+						description: description || data.site.siteMetadata.siteDescription,
 						// If an image has been passed in, use it, else, fall back to preprocessed favicon starter image (1500x1500). [schema, meta tags]
 						image: `${data.site.siteMetadata.siteUrl}${image || data.favicon.childImageSharp.fixed.src}`,
 						// If an image has been passed in, if defined, use imageAlt, else, fallback to title, then description. If not, use site title as defined in config. [schema, meta tags]
@@ -89,7 +89,7 @@ class SEO extends React.PureComponent {
 							logo: {
 								'@type': 'ImageObject',
 								url: `${data.site.siteMetadata.siteUrl}${data.favicon.childImageSharp.fixed.src}`,
-								alt: data.site.siteMetadata.title
+								alt: data.site.siteMetadata.siteTitle
 							}
 						},
 						datePublished: seo.datePublished,

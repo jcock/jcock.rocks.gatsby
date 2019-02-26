@@ -55,12 +55,6 @@ export default PageTemplate;
 
 export const pageQuery = graphql`
 	query PageQuery($slug: String!) {
-		site {
-			siteMetadata {
-				title
-				author
-			}
-		}
 		markdownRemark(fields: { slug: { eq: $slug } }) {
 			excerpt(pruneLength: 160)
 			html
