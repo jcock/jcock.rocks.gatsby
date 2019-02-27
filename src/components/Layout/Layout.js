@@ -3,7 +3,6 @@ import { Link } from 'gatsby';
 
 import Footer from '../Footer';
 import SkipLink from '../Navigation/SkipLink';
-import Loading from '../Transition/Loading';
 
 import '../../assets/css/app.css';
 import style from './Layout.module.css';
@@ -27,7 +26,6 @@ class Layout extends React.PureComponent {
 				</header>
 				<main id="start-of-content">{children}</main>
 				<Footer />
-				<Loading />
 			</>
 		);
 	}
