@@ -1,39 +1,46 @@
 import React from 'react';
-import posed, { PoseGroup } from 'react-pose';
-
-import style from './Transition.module.css';
-
-const timeout = 300;
-const duration = 600;
-const ease = `easeInOut`;
+import TransitionLink from 'gatsby-plugin-transition-link';
+import { TimelineMax } from 'gsap';
 
 class Transition extends React.PureComponent {
 	render() {
-		const { children, location } = this.props;
+		const length = 1;
 
-		const RoutesContainer = posed.div({
-			enter: {
-				delay: timeout,
-				beforeChildren: true,
-				// filter: `blur(0px)`,
-				opacity: 1,
-				transition: {
-					duration,
-					ease
-				}
-			},
-			exit: {
-				// filter: `blur(4px)`,
-				opacity: 0
-			}
-		});
+		const fade = ({ node, direction }) => {
+			const duration = direction === 'out' ? length / 2 : length;
+			const opacity = direction === 'in' ? 1 : 0;
+			const scrollTop = document.scrollingElement.scrollTop || document.body.scrollTop || window.pageYOffset;
+
+			const holdPosition =
+				direction === 'out'
+					? {
+							overflowY: 'hidden',
+							height: '100vh',
+							scrollTop
+					  }
+					: {};
+
+			return new TimelineMax().set(node, holdPosition).fromTo(node, duration, { opacity: !opacity }, { opacity });
+		};
+
+		const { duration, children, ...props } = this.props;
 
 		return (
-			<PoseGroup animateOnMount>
-				<RoutesContainer className={style.transitionContainer} key={location.pathname}>
+			<>
+				<TransitionLink
+					exit={{
+						length,
+						trigger: ({ node }) => fade({ node, direction: 'out' })
+					}}
+					entry={{
+						length,
+						trigger: ({ node }) => fade({ node, direction: 'in' })
+					}}
+					{...props}
+				>
 					{children}
-				</RoutesContainer>
-			</PoseGroup>
+				</TransitionLink>
+			</>
 		);
 	}
 }

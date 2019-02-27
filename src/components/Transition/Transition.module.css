@@ -2,13 +2,3 @@
 	overflow: hidden;
 	will-change: opacity, filter;
 }
-
-.loadingBar {
-	background-color: var(--pink);
-	height: 100vh;
-	left: 0;
-	position: fixed;
-	top: 0;
-	transform: scaleX(0);
-	width: 100vw;
-}

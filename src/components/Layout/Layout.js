@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
+import Link from '../Transition';
 import Footer from '../Footer';
 import SkipLink from '../Navigation/SkipLink';
 
