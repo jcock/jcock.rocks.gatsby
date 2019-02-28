@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from '../Transition';
+import { Link } from 'gatsby';
 
 class PageList extends React.PureComponent {
 	getPageList() {

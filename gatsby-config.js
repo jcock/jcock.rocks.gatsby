@@ -84,7 +84,6 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		`gatsby-plugin-sitemap`,
-		`gatsby-plugin-transition-link`,
 		`gatsby-plugin-netlify-cache`,
 		{
 			resolve: `gatsby-plugin-netlify`, // Must be last in the plugins array
