@@ -1,0 +1,9 @@
+.footer {
+	opacity: 0;
+	transition: opacity var(--timingBase) ease-in-out;
+}
+
+.isVisible {
+	composes: footer;
+	opacity: 1;
+}

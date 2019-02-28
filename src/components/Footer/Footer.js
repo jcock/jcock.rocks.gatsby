@@ -1,6 +1,8 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
+import style from './Footer.module.css';
+
 const footerQuery = graphql`
 	query FooterQuery {
 		site {
@@ -18,7 +20,7 @@ class Footer extends React.PureComponent {
 				query={footerQuery}
 				render={data => {
 					return (
-						<footer>
+						<footer className={style.footer}>
 							<p>
 								&copy; {new Date().getFullYear()}. {data.site.siteMetadata.author}. Built with
 								{` `}
