@@ -4,15 +4,15 @@ import posed, { PoseGroup } from 'react-pose';
 import style from './Transition.module.css';
 
 /*
-	gatsby-browser.js contains a variable for transitionDelay
+	utils/shouldUpdateScroll.js contains a variable for transitionDelay
 	which sets the scrollTop delay so the initial page can transition out.
-	The value for transitionDelay should match timout
+	The value for transitionDelay should be 1/2 duration
 */
 
 const config = {
 	timeout: 300,
 	duration: 600,
-	ease: `easeInOut`
+	ease: `easeOut`
 };
 
 class PageTransition extends React.PureComponent {
