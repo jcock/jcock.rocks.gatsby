@@ -1,8 +1,14 @@
 .bio {
-	display: flex;
-	margin-bottom: 1rem;
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr);
+	grid-gap: 0.5rem;
+	align-items: center;
 }
 
 .avatar {
 	border-radius: 50%;
+}
+
+p {
+	margin: 0;
 }

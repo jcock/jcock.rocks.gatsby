@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import FeaturedImage from '../components/FeaturedImage';
+import Figure from '../components/Figure';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import SiblingsNav from '../components/Navigation/SiblingsNav';
@@ -36,7 +36,14 @@ class PageTemplate extends React.Component {
 				<h1>{page.frontmatter.title}</h1>
 				<p>{page.frontmatter.date}</p>
 
-				{featuredImg && <FeaturedImage fluid={featuredImg.childImageSharp.fluid} alt={page.frontmatter.title} />}
+				{featuredImg && (
+					<Figure
+						fluid={featuredImg.childImageSharp.fluid}
+						alt={page.frontmatter.title}
+						caption={page.frontmatter.title}
+						type="feature"
+					/>
+				)}
 
 				<div dangerouslySetInnerHTML={{ __html: page.html }} />
 

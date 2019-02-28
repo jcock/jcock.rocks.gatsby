@@ -40,7 +40,12 @@
 		],
     "media-feature-name-no-vendor-prefix": true,
     "no-missing-end-of-source-newline": true,
-    "property-no-unknown": true,
+		"property-no-unknown": [
+			true,
+			{
+				"ignoreProperties": ["composes"]
+			}
+		],
     "property-no-vendor-prefix": true,
     "selector-max-compound-selectors": 3,
     "selector-max-id": 0,
