@@ -1,25 +1,39 @@
 import React from 'react';
-import { Transition, animated } from 'react-spring/renderprops';
+import posed, { PoseGroup } from 'react-pose';
 
-const timeout = 300;
-const duration = 600;
-const ease = `easeInOut`;
+import style from './Transition.module.css';
+
+const config = {
+	timeout: 300,
+	duration: 600,
+	ease: `easeInOut`
+};
 
 class PageTransition extends React.PureComponent {
 	render() {
 		const { children, location } = this.props;
 
+		const RoutesContainer = posed.div({
+			enter: {
+				delay: config.timeout,
+				beforeChildren: true,
+				opacity: 1,
+				transition: {
+					duration: config.duration,
+					ease: config.ease
+				}
+			},
+			exit: {
+				opacity: 0
+			}
+		});
+
 		return (
-			<Transition
-				native
-				items={location.pathname}
-				from={{ opacity: 0 }}
-				enter={{ opacity: 1 }}
-				leave={{ opacity: 0 }}
-				unique
-			>
-				{() => props => <animated.div style={props}>{children}</animated.div>}
-			</Transition>
+			<PoseGroup animateOnMount>
+				<RoutesContainer className={style.transitionContainer} key={location.pathname}>
+					{children}
+				</RoutesContainer>
+			</PoseGroup>
 		);
 	}
 }

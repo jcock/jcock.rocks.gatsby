@@ -1,4 +1,4 @@
 .transitionContainer {
 	overflow: hidden;
-	will-change: opacity, filter;
+	will-change: opacity;
 }

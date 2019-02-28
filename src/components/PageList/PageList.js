@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import posed from 'react-pose';
+
+import style from './PageList.module.css';
 
 class PageList extends React.PureComponent {
 	getPageList() {
@@ -18,18 +21,28 @@ class PageList extends React.PureComponent {
 	render() {
 		const pageList = this.getPageList();
 
+		const ListContainer = posed.ol({
+			enter: { staggerChildren: 50 },
+			exit: { staggerChildren: 20, staggerDirection: -1 }
+		});
+
+		const Item = posed.li({
+			enter: { y: 0, opacity: 1 },
+			exit: { y: 50, opacity: 0 }
+		});
+
 		return (
-			<ol reversed>
+			<ListContainer reversed>
 				{pageList.map(node => (
-					<li key={node.path}>
+					<Item className={style.item} key={node.path}>
 						<h2>
 							<Link to={node.path}>{node.title}</Link>
 						</h2>
 						<p>{node.date}</p>
 						<p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-					</li>
+					</Item>
 				))}
-			</ol>
+			</ListContainer>
 		);
 	}
 }
