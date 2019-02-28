@@ -1,23 +1,10 @@
-import React from 'react';
-import Transition from './src/components/Transition';
+import updateScroll from './src/utils/shouldUpdateScroll';
+import wrapPageElementWithTransition from './src/utils/wrapPageElement';
 
 import 'prismjs/themes/prism-tomorrow.css';
 
 // Wrap Pages In Transition
-// eslint-disable-next-line import/prefer-default-export
-const wrapPageElement = ({ element, props }) => {
-	return <Transition {...props}>{element}</Transition>;
-};
+export const wrapPageElement = wrapPageElementWithTransition;
 
-const transitionDelay = 300;
-const shouldUpdateScroll = ({ routerProps: { location }, getSavedScrollPosition }) => {
-	if (location.action === 'PUSH') {
-		window.setTimeout(() => window.scrollTo(0, 0), transitionDelay);
-	} else {
-		const savedPosition = getSavedScrollPosition(location);
-		window.setTimeout(() => window.scrollTo(...(savedPosition || [0, 0])), transitionDelay);
-	}
-	return false;
-};
-
-export { wrapPageElement, shouldUpdateScroll };
+// Delay scroll location updates for page transitions
+export const shouldUpdateScroll = updateScroll;
