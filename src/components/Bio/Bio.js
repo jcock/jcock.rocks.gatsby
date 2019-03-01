@@ -37,10 +37,10 @@ class Bio extends React.PureComponent {
 					return (
 						<div className={style.bio}>
 							<Img className={style.avatar} fixed={data.avatar.childImageSharp.fixed} alt={author.name} fadeIn />
-							<p>{author.bio}</p>
 							<p>
 								Written by <strong>{author.name}</strong>.{` `}
-								<a href={`https://twitter.com/${social.twitter}`}>You should follow him on Twitter</a>.
+								{author.bio} {` `}
+								<a href={`https://twitter.com/${social.twitter}`}>Follow me on Twitter</a>.
 							</p>
 						</div>
 					);
