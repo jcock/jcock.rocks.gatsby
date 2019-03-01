@@ -1,5 +1,7 @@
 import React from 'react';
-import posed, { PoseGroup } from 'react-pose';
+import { TransitionGroup, Transition as ReactTransition } from 'react-transition-group';
+
+import config from '../../constants/transition';
 
 import style from './Transition.module.css';
 
@@ -9,40 +11,42 @@ import style from './Transition.module.css';
 	The value for transitionDelay should be 1/2 duration
 */
 
-const config = {
-	timeout: 300,
-	duration: 600,
-	ease: `easeOut`
+const transitionStyles = {
+	entering: {
+		position: 'absolute',
+		opacity: 0
+	},
+	entered: {
+		transition: `opacity ${config.timeout}ms ${config.ease}`,
+		opacity: 1
+	},
+	exiting: {
+		transition: `all ${config.timeout}ms ${config.ease}`,
+		opacity: 0
+	}
 };
 
-class PageTransition extends React.PureComponent {
+class Transition extends React.PureComponent {
 	render() {
 		const { children, location } = this.props;
 
-		const RoutesContainer = posed.div({
-			enter: {
-				delay: config.timeout,
-				delayChildren: config.timeout,
-				beforeChildren: true,
-				opacity: 1,
-				transition: {
-					duration: config.duration,
-					ease: config.ease
-				}
-			},
-			exit: {
-				opacity: 0
-			}
-		});
-
 		return (
-			<PoseGroup animateOnMount>
-				<RoutesContainer className={style.transitionContainer} key={location.pathname}>
-					{children}
-				</RoutesContainer>
-			</PoseGroup>
+			<TransitionGroup component={null}>
+				<ReactTransition appear key={location.pathname} timeout={config.timeout}>
+					{status => (
+						<div
+							className={style.transitionContainer}
+							style={{
+								...transitionStyles[status]
+							}}
+						>
+							{children}
+						</div>
+					)}
+				</ReactTransition>
+			</TransitionGroup>
 		);
 	}
 }
 
-export default PageTransition;
+export default Transition;
