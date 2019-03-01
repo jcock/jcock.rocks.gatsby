@@ -7,7 +7,9 @@ const footerQuery = graphql`
 	query FooterQuery {
 		site {
 			siteMetadata {
-				author
+				author {
+					name
+				}
 			}
 		}
 	}
@@ -22,7 +24,7 @@ class Footer extends React.PureComponent {
 					return (
 						<footer className={style.footer}>
 							<p>
-								&copy; {new Date().getFullYear()}. {data.site.siteMetadata.author}. Built with
+								&copy; {new Date().getFullYear()}. {data.site.siteMetadata.author.name}. Built with
 								{` `}
 								<a href="https://www.gatsbyjs.org">Gatsby</a>
 							</p>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 
 import Footer from '../Footer';
 import SkipLink from '../Navigation/SkipLink';
@@ -30,5 +31,9 @@ class Layout extends React.PureComponent {
 		);
 	}
 }
+
+Layout.propTypes = {
+	children: PropTypes.node.isRequired
+};
 
 export default Layout;

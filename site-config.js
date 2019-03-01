@@ -8,10 +8,21 @@ const config = {
 	siteDescription: `The portfolio of Jason Cockerham, digital designer, developer, and maker of internets.`,
 	siteKeywords: `ux design, front-end development, gatsbyjs, html, css, js, react, static, jamstack`,
 	siteUrl: `https://jcock.rocks`,
-	author: `Jason Cockerham`,
 	lang: `en`,
 	themeColor: `#000`,
 	backgroundColor: `#000`,
+	author: {
+		name: `Jason Cockerham`,
+		photo: `/profile-pic.jpg`,
+		bio: `Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.`,
+		contacts: {
+			email: `jason@jcock.rocks`,
+			facebook: `jcock`,
+			twitter: `@jcock`,
+			github: `jcock`,
+			instagram: `jc0ck`
+		}
+	},
 
 	// Analytics
 	googleAnalyticsID: `UA-54478957-1`,

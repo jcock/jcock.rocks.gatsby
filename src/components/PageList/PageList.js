@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import posed from 'react-pose';
+import PropTypes from 'prop-types';
 
 import style from './PageList.module.css';
 
@@ -46,5 +47,9 @@ class PageList extends React.PureComponent {
 		);
 	}
 }
+
+PageList.propTypes = {
+	postEdges: PropTypes.arrayOf(PropTypes.object).isRequired
+};
 
 export default PageList;

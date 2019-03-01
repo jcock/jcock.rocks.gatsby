@@ -3,7 +3,7 @@ import { TransitionGroup, Transition as ReactTransition } from 'react-transition
 import anime from 'animejs';
 
 const config = {
-	timeout: 500,
+	timeout: 600,
 	ease: `ease-in-out`
 };
 

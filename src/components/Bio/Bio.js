@@ -15,7 +15,10 @@ const bioQuery = graphql`
 		}
 		site {
 			siteMetadata {
-				author
+				author {
+					name
+					bio
+				}
 				social {
 					twitter
 				}
@@ -33,10 +36,11 @@ class Bio extends React.PureComponent {
 					const { author, social } = data.site.siteMetadata;
 					return (
 						<div className={style.bio}>
-							<Img className={style.avatar} fixed={data.avatar.childImageSharp.fixed} alt={author} fadeIn />
+							<Img className={style.avatar} fixed={data.avatar.childImageSharp.fixed} alt={author.name} fadeIn />
+							<p>{author.bio}</p>
 							<p>
-								Written by <strong>{author}</strong>.{` `}
-								<a href={`https://twitter.com/${social.twitter}`}>You should follow him on Twitter</a>
+								Written by <strong>{author.name}</strong>.{` `}
+								<a href={`https://twitter.com/${social.twitter}`}>You should follow him on Twitter</a>.
 							</p>
 						</div>
 					);

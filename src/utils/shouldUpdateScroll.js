@@ -1,4 +1,4 @@
-const transitionDelay = 300;
+const transitionDelay = 600;
 
 const shouldUpdateScroll = ({ routerProps: { location }, getSavedScrollPosition }) => {
 	if (location.action === 'PUSH') {

@@ -103,6 +103,10 @@ class IO extends React.PureComponent {
 	}
 }
 
+IO.defaultProps = {
+	rootMargin: null
+};
+
 IO.propTypes = {
 	children: PropTypes.func.isRequired,
 	rootMargin: PropTypes.string,

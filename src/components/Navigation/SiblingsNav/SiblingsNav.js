@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 
 class SiblingNav extends React.PureComponent {
 	render() {
@@ -25,5 +26,19 @@ class SiblingNav extends React.PureComponent {
 		);
 	}
 }
+
+SiblingNav.defaultProps = {
+	prevLocation: null,
+	prevTitle: null,
+	nextLocation: null,
+	nextTitle: null
+};
+
+SiblingNav.propTypes = {
+	prevLocation: PropTypes.string,
+	prevTitle: PropTypes.string,
+	nextLocation: PropTypes.string,
+	nextTitle: PropTypes.string
+};
 
 export default SiblingNav;

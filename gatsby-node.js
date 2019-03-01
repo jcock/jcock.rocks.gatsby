@@ -29,6 +29,7 @@ exports.createPages = ({ graphql, actions }) => {
 							node {
 								id
 								fileAbsolutePath
+								excerpt
 								fields {
 									slug
 								}
@@ -36,7 +37,6 @@ exports.createPages = ({ graphql, actions }) => {
 									title
 									description
 								}
-								excerpt
 							}
 						}
 					}

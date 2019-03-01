@@ -11,7 +11,9 @@ const seoQuery = graphql`
 			buildTime(formatString: "YYYY-MM-DD")
 			pathPrefix
 			siteMetadata {
-				author
+				author {
+					name
+				}
 				siteTitle
 				titleTemplate
 				siteDescription
@@ -76,16 +78,16 @@ class SEO extends React.PureComponent {
 						'@type': seo.pageType,
 						author: {
 							'@type': 'Person',
-							name: data.site.siteMetadata.author
+							name: data.site.siteMetadata.author.name
 						},
 						copyrightHolder: {
 							'@type': 'Person',
-							name: data.site.siteMetadata.author
+							name: data.site.siteMetadata.author.name
 						},
 						copyrightYear: `${new Date().getFullYear()}`,
 						creator: {
 							'@type': 'Person',
-							name: data.site.siteMetadata.author,
+							name: data.site.siteMetadata.author.name,
 							logo: {
 								'@type': 'ImageObject',
 								url: `${data.site.siteMetadata.siteUrl}${data.favicon.childImageSharp.fixed.src}`,
@@ -104,7 +106,7 @@ class SEO extends React.PureComponent {
 						mainEntityOfPage: seo.url,
 						publisher: {
 							'@type': 'Person',
-							name: data.site.siteMetadata.author
+							name: data.site.siteMetadata.author.name
 						},
 						url: seo.url
 					};

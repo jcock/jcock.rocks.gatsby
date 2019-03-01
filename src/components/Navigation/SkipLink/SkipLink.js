@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class SkipLink extends React.PureComponent {
 	render() {
@@ -11,5 +12,10 @@ class SkipLink extends React.PureComponent {
 		);
 	}
 }
+
+SkipLink.propTypes = {
+	children: PropTypes.node.isRequired,
+	to: PropTypes.string.isRequired
+};
 
 export default SkipLink;
