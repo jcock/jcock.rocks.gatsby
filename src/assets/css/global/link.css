@@ -6,7 +6,6 @@
 a {
 	background-color: transparent;
 	color: var(--linkColor);
-	text-decoration-skip-ink: auto;
 	transition: color var(--transitionTimingBase) var(--easePrimary);
 	will-change: color;
 

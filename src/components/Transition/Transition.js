@@ -42,6 +42,7 @@ class Transition extends React.PureComponent {
 				>
 					{status => (
 						<div
+							id="top"
 							className={style.transitionContainer}
 							style={{
 								...transitionStyles[status]
