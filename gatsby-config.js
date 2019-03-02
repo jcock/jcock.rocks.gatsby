@@ -118,20 +118,14 @@ module.exports = {
 			}
 		},
 		{
-			// react-axe prints a11y warnings to your browser’s console.
-			resolve: 'gatsby-plugin-react-axe',
-			options: {
-				showInProduction: false
-			}
-		},
-		{
 			resolve: `gatsby-transformer-remark`,
 			options: {
 				plugins: [
 					{
 						resolve: `gatsby-remark-images`,
 						options: {
-							withWebp: true
+							withWebp: true,
+							maxWidth: 2048
 						}
 					},
 					`gatsby-remark-responsive-iframe`,

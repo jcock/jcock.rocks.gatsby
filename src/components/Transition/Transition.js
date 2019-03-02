@@ -32,7 +32,14 @@ class Transition extends React.PureComponent {
 
 		return (
 			<TransitionGroup component={null}>
-				<ReactTransition appear key={location.pathname} timeout={config.timeout}>
+				<ReactTransition
+					appear
+					key={location.pathname}
+					timeout={{
+						enter: config.timeout,
+						exit: config.timeout
+					}}
+				>
 					{status => (
 						<div
 							className={style.transitionContainer}
