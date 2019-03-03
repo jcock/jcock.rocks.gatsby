@@ -13,7 +13,7 @@ import style from './Transition.module.css';
 
 const transitionStyles = {
 	entering: {
-		position: 'absolute',
+		// position: 'absolute',
 		opacity: 0
 	},
 	entered: {
