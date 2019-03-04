@@ -1,21 +1,41 @@
 import anime from 'animejs';
 
+import config from '../../constants/transition';
+
+let currentAnimation;
+
 export default {
 	animateIn(el) {
-		anime({
+		if (currentAnimation) currentAnimation.pause();
+		currentAnimation = anime.timeline().add({
 			targets: el,
-			opacity: 1,
-			translateX: 0,
-			easing: 'easeInOutQuad'
+			translateX: [-1000, 0],
+			opacity: [0, 1],
+			duration: `${config.timeout}ms`,
+			elasticity: 100
 		});
+		// anime({
+		// 	targets: el,
+		// 	opacity: ['0', '1'],
+		// 	easing: 'easeInOutQuad',
+		// 	duration: `${config.timeout}ms`
+		// });
 	},
 
 	animateOut(el) {
-		anime({
+		if (currentAnimation) currentAnimation.pause();
+		currentAnimation = anime.timeline().add({
 			targets: el,
+			duration: `${config.timeout}ms`,
 			opacity: 0,
-			translateX: 250,
-			easing: 'easeInOutQuad'
+			translateY: -30,
+			easing: 'easeInOutSine'
 		});
+		// anime({
+		// 	targets: el,
+		// 	opacity: ['1', '0'],
+		// 	easing: 'easeInOutQuad',
+		// 	duration: `${config.timeout}ms`
+		// });
 	}
 };

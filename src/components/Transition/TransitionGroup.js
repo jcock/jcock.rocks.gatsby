@@ -15,12 +15,12 @@ import style from './Transition.module.css';
 class Transition extends React.PureComponent {
 	render() {
 		const { children, location } = this.props;
-
 		return (
 			<TransitionGroup component={null}>
 				<ReactTransition
 					appear
 					key={location.pathname}
+					onEnter={el => animations.animateIn(el)}
 					onEntering={el => animations.animateOut(el)}
 					onEntered={el => animations.animateIn(el)}
 					onExiting={el => animations.animateOut(el)}
