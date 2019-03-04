@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
+
+import Link from '../Transition/GlitchLink';
 
 class PageList extends React.PureComponent {
 	getPageList() {

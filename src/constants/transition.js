@@ -1,6 +1,10 @@
 const config = {
-	timeout: 200,
-	ease: `ease-in-out`
+	fade: {
+		timeout: 1
+	},
+	glitch: {
+		timeout: 1
+	}
 };
 
 export default config;

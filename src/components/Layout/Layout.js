@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import Footer from '../Footer';
 import SkipLink from '../Navigation/SkipLink';
+import Link from '../Transition/GlitchLink';
 
 import '../../assets/css/app.css';
 import style from './Layout.module.css';
