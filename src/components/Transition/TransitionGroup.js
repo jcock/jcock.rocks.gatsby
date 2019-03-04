@@ -6,12 +6,6 @@ import animations from './Animations';
 
 import style from './Transition.module.css';
 
-/*
-	utils/shouldUpdateScroll.js contains a variable for transitionDelay
-	which sets the scrollTop delay so the initial page can transition out.
-	The value for transitionDelay should be 1/2 duration
-*/
-
 class Transition extends React.PureComponent {
 	render() {
 		const { children, location } = this.props;
