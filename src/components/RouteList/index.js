@@ -1,1 +1,1 @@
-export { default } from './PageList';
+export { default } from './RouteList';
