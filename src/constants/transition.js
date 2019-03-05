@@ -1,6 +1,11 @@
 const config = {
+	page: {
+		timeout: 200,
+		ease: `ease-in-out`
+	},
 	fade: {
-		timeout: 1
+		durationIn: 1,
+		durationOut: 0.5
 	}
 };
 

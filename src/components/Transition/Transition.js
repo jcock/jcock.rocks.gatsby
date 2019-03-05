@@ -7,15 +7,15 @@ import style from './Transition.module.css';
 
 const transitionStyles = {
 	entering: {
-		// position: 'absolute',
+		position: 'absolute',
 		opacity: 0
 	},
 	entered: {
-		transition: `opacity ${config.timeout}ms ${config.ease}`,
+		transition: `opacity ${config.page.timeout}ms ${config.page.ease}`,
 		opacity: 1
 	},
 	exiting: {
-		transition: `all ${config.timeout}ms ${config.ease}`,
+		transition: `all ${config.page.timeout}ms ${config.page.ease}`,
 		opacity: 0
 	}
 };
@@ -24,15 +24,18 @@ class Transition extends React.PureComponent {
 	render() {
 		const { children, location } = this.props;
 
+		const scrollTop = () => window.scrollTo(0, 0);
+
 		return (
 			<TransitionGroup component={null}>
 				<ReactTransition
 					appear
 					key={location.pathname}
 					timeout={{
-						enter: config.timeout,
-						exit: config.timeout
+						enter: config.page.timeout,
+						exit: config.page.timeout
 					}}
+					onExited={scrollTop}
 				>
 					{status => (
 						<div
