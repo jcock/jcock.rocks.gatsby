@@ -26,11 +26,11 @@ export default function Fade({ exit, entry, fade: removedProp, duration, ...prop
 		<TransitionLink
 			exit={{
 				length: config.fade.timeout,
-				trigger: ({ node }) => fade({ exit, node, direction: 'out' })
+				trigger: ({ node }) => fade({ node, direction: 'out' })
 			}}
 			entry={{
 				length: config.fade.timeout,
-				trigger: ({ node }) => fade({ exit, node, direction: 'in' })
+				trigger: ({ node }) => fade({ node, direction: 'in' })
 			}}
 			{...props}
 		>
