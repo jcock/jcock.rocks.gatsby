@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import Bio from '../components/Bio';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import PageList from '../components/PageList';
+import RouteList from '../components/RouteList';
 
 class AppIndex extends React.Component {
 	render() {
@@ -15,7 +15,7 @@ class AppIndex extends React.Component {
 			<Layout>
 				<SEO title="" />
 				<Bio />
-				<PageList postEdges={postEdges} />
+				<RouteList postEdges={postEdges} />
 			</Layout>
 		);
 	}
