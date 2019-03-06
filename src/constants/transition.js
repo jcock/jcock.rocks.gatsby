@@ -6,6 +6,10 @@ const config = {
 	fade: {
 		durationIn: 1,
 		durationOut: 0.5
+	},
+	anifade: {
+		durationIn: 1000,
+		durationOut: 500
 	}
 };
 

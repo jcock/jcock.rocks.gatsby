@@ -1,4 +1,12 @@
 .transitionContainer {
 	overflow: hidden;
 	will-change: opacity;
+	width: 100%;
+	float: left;
+	position: relative;
+}
+
+.transitionContainer + .transitionContainer {
+	margin-left: -100%;
+	margin-right: 0;
 }

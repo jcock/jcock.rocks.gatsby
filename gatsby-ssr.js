@@ -1,6 +1,6 @@
-// import wrapPageElementWithTransition from './src/utils/wrapPageElement';
+import wrapPageElementWithTransition from './src/utils/wrapPageElement';
 
-// // Wrap Pages In Transition
-// const wrapPageElement = wrapPageElementWithTransition;
+// Wrap Pages In Transition
+const wrapPageElement = wrapPageElementWithTransition;
 
-// export default wrapPageElement;
+export default wrapPageElement;

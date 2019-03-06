@@ -140,7 +140,7 @@ module.exports = {
 		`gatsby-plugin-sharp`,
 		`gatsby-plugin-sitemap`,
 		`gatsby-plugin-sitemap`,
-		`gatsby-plugin-transition-link`,
+		// `gatsby-plugin-transition-link`,
 		{
 			resolve: `gatsby-plugin-netlify`, // Must be last in the plugins array
 			options: {

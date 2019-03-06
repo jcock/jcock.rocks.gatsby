@@ -1,10 +1,10 @@
-import 'prismjs/themes/prism-tomorrow.css';
-
-// import wrapPageElementWithTransition from './src/utils/wrapPageElement';
-
 // import 'prismjs/themes/prism-tomorrow.css';
 
-// // Wrap Pages In Transition
-// export const wrapPageElement = wrapPageElementWithTransition;
+import wrapPageElementWithTransition from './src/utils/wrapPageElement';
 
-// export const shouldUpdateScroll = () => false;
+import 'prismjs/themes/prism-tomorrow.css';
+
+// Wrap Pages In Transition
+export const wrapPageElement = wrapPageElementWithTransition;
+
+export const shouldUpdateScroll = () => false;
