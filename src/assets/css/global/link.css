@@ -6,7 +6,7 @@
 a {
 	background-color: transparent;
 	color: var(--linkColor);
-	transition: color var(--transitionTimingBase) var(--easePrimary);
+	transition: all var(--timingBase) var(--easePrimary);
 	will-change: color;
 
 	&:hover {

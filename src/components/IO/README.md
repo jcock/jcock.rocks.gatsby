@@ -41,15 +41,15 @@ const { isVisible } = this.props;
 - Set prop style with composes: defaultstyle
 
 ``` css
-// Footer.module.css
+/* Footer.module.css */
 
 .footer {
-  opacity: 0;
-  transition: opacity var(--timingBase) ease-in-out;
+	opacity: 0;
+	transition: opacity var(--timingBase) var(--easePrimary);
 }
 
 .isVisible {
-  composes: footer;
-  opacity: 1;
+	composes: footer;
+	opacity: 1;
 }
 ```
