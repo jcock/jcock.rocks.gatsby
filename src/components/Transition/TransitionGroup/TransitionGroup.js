@@ -22,27 +22,33 @@ class Transition extends React.PureComponent {
 			scrollTop
 		};
 
-		const animate = (page, animatingIn) => ({
+		const kickoff = {
+			opacity: 0,
+			zIndex: 1
+		};
+
+		const fade = (page, animatingIn) => ({
 			targets: page,
-			duration: animatingIn ? config.page.durationIn : config.page.durationOut,
-			delay: animatingIn ? config.page.durationOut : 0,
-			opacity: animatingIn ? [0, 1] : [1, 0],
-			easing: 'linear',
-			complete: !animatingIn && (() => triggerAnimationDoneEvent(page))
+			opacity: animatingIn ? 1 : 0,
+			easing: 'linear'
 		});
 
 		const enter = page => {
 			anime
-				.timeline()
-				.set(page, { zIndex: 1 })
-				.add(animate(page, true));
+				.timeline({
+					duration: config.page.durationIn,
+					delay: config.page.durationOut
+				})
+				.set(page, kickoff)
+				.add(fade(page, true));
 		};
 
 		const exit = page => {
 			anime
-				.timeline()
+				.timeline({ duration: config.page.durationOut })
 				.set(page, holdIt)
-				.add(animate(page, false));
+				.add(fade(page, false))
+				.add({ complete: () => triggerAnimationDoneEvent(page) });
 		};
 
 		return (
@@ -54,6 +60,9 @@ class Transition extends React.PureComponent {
 					key={location.pathname}
 					onEnter={enter}
 					onExit={exit}
+					timeout={{
+						enter: config.page.durationIn
+					}}
 				>
 					<div id="top" className={style.transitionContainer}>
 						{children}
