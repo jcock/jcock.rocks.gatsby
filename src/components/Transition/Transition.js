@@ -11,11 +11,11 @@ const transitionStyles = {
 		opacity: 0
 	},
 	entered: {
-		transition: `opacity ${config.page.timeout}ms ${config.page.ease}`,
+		transition: `opacity ${config.page2.timeout}ms ${config.page2.ease}`,
 		opacity: 1
 	},
 	exiting: {
-		transition: `all ${config.page.timeout}ms ${config.page.ease}`,
+		transition: `all ${config.page2.timeout}ms ${config.page2.ease}`,
 		opacity: 0
 	}
 };
@@ -32,8 +32,8 @@ class Transition extends React.PureComponent {
 					appear
 					key={location.pathname}
 					timeout={{
-						enter: config.page.timeout,
-						exit: config.page.timeout
+						enter: config.page2.timeout,
+						exit: config.page2.timeout
 					}}
 					onExited={scrollTop}
 				>

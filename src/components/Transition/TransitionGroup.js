@@ -17,36 +17,32 @@ class Transition extends React.PureComponent {
 		const scrollTop = () => window.scrollTo(0, 0);
 
 		const holdIt = {
-			// position: 'relative',
-			// zIndex: 100,
-			// width: '100%',
 			height: '100vh',
 			overflow: 'hidden',
 			scrollTop
 		};
 
-		const animate = (container, animatingIn) => ({
-			targets: container,
-			duration: animatingIn ? config.anifade.durationIn : config.anifade.durationOut,
-			delay: animatingIn ? config.anifade.durationOut : 0,
-			opacity: animatingIn ? { value: [0, 1], easing: 'linear' } : { value: [1, 0], easing: 'linear' },
-			// scale: animatingIn ? [0.5, 1] : [1, 0.5],
-			easing: 'spring(1, 150, 10)',
-			complete: !animatingIn && (() => triggerAnimationDoneEvent(container))
+		const animate = (page, animatingIn) => ({
+			targets: page,
+			duration: animatingIn ? config.page.durationIn : config.page.durationOut,
+			delay: animatingIn ? config.page.durationOut : 0,
+			opacity: animatingIn ? [0, 1] : [1, 0],
+			easing: 'linear',
+			complete: !animatingIn && (() => triggerAnimationDoneEvent(page))
 		});
 
-		const enter = container => {
+		const enter = page => {
 			anime
 				.timeline()
-				.add(animate(container, true))
-				.set({ zIndex: 100 });
+				.set(page, { zIndex: 1 })
+				.add(animate(page, true));
 		};
 
-		const exit = container => {
+		const exit = page => {
 			anime
 				.timeline()
-				.set(container, holdIt)
-				.add(animate(container, false));
+				.set(page, holdIt)
+				.add(animate(page, false));
 		};
 
 		return (
@@ -54,12 +50,14 @@ class Transition extends React.PureComponent {
 				<ReactTransition
 					appear
 					addEndListener={addEndListener}
+					mountOnEnter
+					unmountOnExit
 					in={visible}
 					key={location.pathname}
 					onEnter={enter}
 					onExit={exit}
 					timeout={{
-						enter: config.anifade.durationIn
+						enter: config.page.durationIn
 					}}
 				>
 					<div id="top" className={style.transitionContainer}>
