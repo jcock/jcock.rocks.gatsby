@@ -3,7 +3,7 @@ const config = {
 		durationIn: 1000,
 		durationOut: 1000
 	},
-	page2: {
+	pages: {
 		timeout: 200,
 		ease: `ease-in-out`
 	},
