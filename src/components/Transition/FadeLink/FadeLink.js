@@ -2,7 +2,7 @@ import React from 'react';
 import { TimelineMax } from 'gsap';
 import TransitionLink from 'gatsby-plugin-transition-link';
 
-import config from '../../constants/transition';
+import config from '../../../constants/transition';
 
 const fade = ({ node, direction }) => {
 	const delay = direction === 'out' ? 0 : config.fade.durationOut;

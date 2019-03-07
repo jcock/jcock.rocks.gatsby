@@ -2,9 +2,9 @@ import React from 'react';
 import anime from 'animejs';
 import { TransitionGroup, Transition as ReactTransition } from 'react-transition-group';
 
-import config from '../../constants/transition';
+import config from '../../../constants/transition';
 
-import style from './Transition.module.css';
+import style from '../Transition.module.css';
 
 class Transition extends React.PureComponent {
 	render() {
@@ -56,9 +56,6 @@ class Transition extends React.PureComponent {
 					key={location.pathname}
 					onEnter={enter}
 					onExit={exit}
-					timeout={{
-						enter: config.page.durationIn
-					}}
 				>
 					<div id="top" className={style.transitionContainer}>
 						{children}

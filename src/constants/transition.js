@@ -1,6 +1,6 @@
 const config = {
 	page: {
-		durationIn: 200,
+		durationIn: 1000,
 		durationOut: 1000
 	},
 	page2: {
