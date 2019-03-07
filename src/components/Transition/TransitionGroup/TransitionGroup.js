@@ -50,8 +50,6 @@ class Transition extends React.PureComponent {
 				<ReactTransition
 					appear
 					addEndListener={addEndListener}
-					mountOnEnter
-					unmountOnExit
 					in={visible}
 					key={location.pathname}
 					onEnter={enter}
