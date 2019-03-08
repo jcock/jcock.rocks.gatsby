@@ -5,10 +5,13 @@
 
 @import "./variables.css";
 
-/* Global */
-@import "./global/remedy.css";
-@import "./global/base.css";
-@import "./global/link.css";
+/* Base */
+@import "./base/remedy.css";
+@import "./base/base.css";
+@import "./base/type.css";
+
+/* Elements */
+@import "./elements/link.css";
 
 /* Utilities */
 @import "./utilities/hide.css";

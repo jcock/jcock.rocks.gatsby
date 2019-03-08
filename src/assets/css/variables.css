@@ -72,12 +72,12 @@
 	--lineHeightLg: 1.75;
 
 	/* Fonts:Headings */
-	--fontSizeH1: 2rem;
-	--fontSizeH2: 1.5rem;
-	--fontSizeH3: 1.17rem;
+	--fontSizeH1: 3.375rem;
+	--fontSizeH2: 2.25rem;
+	--fontSizeH3: 1.5rem;
 	--fontSizeH4: 1rem;
-	--fontSizeH5: 0.83rem;
-	--fontSizeH6: 0.67rem;
+	--fontSizeH5: 0.667rem;
+	--fontSizeH6: 0.444rem;
 
 	/* Fonts:Headings:Settings */
 	--headingsFontFamily: var(--fontFamilySansSerif);
@@ -96,20 +96,6 @@
 	--mqLg: 62rem;  /* 992px */
 	--mqXl: 75rem;  /* 1200px */
 	--mqXxl: 90rem; /* 1440px */
-
-	/* stylelint-disable */
-	@custom-media --minXs (min-width: var(--mqXs));
-	@custom-media --minSm (min-width: var(--mqSm));
-	@custom-media --minMd (min-width: var(--mqMd));
-	@custom-media --minLg (min-width: var(--mqLg));
-	@custom-media --minXl (min-width: var(--mqXl));
-	@custom-media --minXxl (min-width: var(--mqXxl));
-	@custom-media --maxSm (max-width: var(--mqSm));
-	@custom-media --maxMd (max-width: var(--mqMd));
-	@custom-media --maxLg (max-width: var(--mqLg));
-	@custom-media --maxXl (max-width: var(--mqXl));
-	@custom-media --maxXxl (max-width: var(--mqXxl));
-	/* stylelint-enable */
 
 	/*
 	* Transitions
