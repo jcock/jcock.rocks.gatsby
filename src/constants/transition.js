@@ -4,7 +4,7 @@ const config = {
 		durationOut: 1000
 	},
 	pages: {
-		timeout: 200,
+		timeout: 600,
 		ease: `ease-in-out`
 	},
 	fade: {

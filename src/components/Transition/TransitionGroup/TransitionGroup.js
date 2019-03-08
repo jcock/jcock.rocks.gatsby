@@ -37,28 +37,28 @@ class PageTransition extends React.PureComponent {
 		};
 
 		// Animation configuration
-		const fade = (page, animatingIn) => ({
-			targets: page,
+		const fade = (node, animatingIn) => ({
+			targets: node,
 			opacity: animatingIn ? 1 : 0,
 			easing: 'linear'
 		});
 
-		const enter = page => {
+		const enter = node => {
 			anime
 				.timeline({
 					duration: motionPreference.durationIn,
 					delay: motionPreference.durationOut
 				})
-				.set(page, kickoff)
-				.add(fade(page, true));
+				.set(node, kickoff)
+				.add(fade(node, true));
 		};
 
-		const exit = page => {
+		const exit = node => {
 			anime
 				.timeline({ duration: motionPreference.durationOut })
-				.set(page, holdIt)
-				.add(fade(page, false))
-				.add({ complete: () => triggerAnimationDoneEvent(page) });
+				.set(node, holdIt)
+				.add(fade(node, false))
+				.add({ complete: () => triggerAnimationDoneEvent(node) });
 		};
 
 		return (
@@ -68,8 +68,8 @@ class PageTransition extends React.PureComponent {
 					addEndListener={addEndListener}
 					in={visible}
 					key={location.pathname}
-					onEnter={enter}
-					onExit={exit}
+					onEnter={node => enter(node)}
+					onExit={node => exit(node)}
 				>
 					<div id="top" className={style.transitionContainer}>
 						{children}
