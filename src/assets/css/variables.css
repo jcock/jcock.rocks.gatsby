@@ -110,7 +110,8 @@
 	--easingCirc: cubic-bezier(0.075, 0.82, 0.165, 0);
 
 	/* Transitions:Timings */
-	--timingBase: 300ms;
+	--timingFast: 200ms;
+	--timingBase: 400ms;
 	--timingMed: 600ms;
 	--timingSlow: 900ms;
 
@@ -122,5 +123,5 @@
 	/* Scrollbar */
 	--scrollbar-width: 0.5rem;
 	--scrollbar-track-background: rgba(0, 0, 0, 0.05);
-	--scrollbar-thumb-background: rgba(0, 0, 0, 0.125);
+	--scrollbar-thumb-background: var(--pink);
 }

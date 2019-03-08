@@ -1,5 +1,3 @@
-// import 'prismjs/themes/prism-tomorrow.css';
-
 import wrapPageElementWithTransition from './src/utils/wrapPageElement';
 
 import 'prismjs/themes/prism-tomorrow.css';

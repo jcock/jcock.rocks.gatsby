@@ -1,5 +1,5 @@
 import React from 'react';
-import { TransitionGroup, Transition as ReactTransition } from 'react-transition-group';
+import { TransitionGroup, Transition as PageTransition } from 'react-transition-group';
 
 import config from '../../constants/transition';
 
@@ -11,11 +11,11 @@ const transitionStyles = {
 		opacity: 0
 	},
 	entered: {
-		transition: `opacity ${config.pages.timeout}ms ${config.pages.ease}`,
+		transition: `opacity ${config.page.durationIn}ms var(--easePrimary)`,
 		opacity: 1
 	},
 	exiting: {
-		transition: `all ${config.pages.timeout}ms ${config.pages.ease}`,
+		transition: `all ${config.page.durationOut}ms var(--easePrimary)`,
 		opacity: 0
 	}
 };
@@ -28,12 +28,12 @@ class Transition extends React.PureComponent {
 
 		return (
 			<TransitionGroup component={null}>
-				<ReactTransition
+				<PageTransition
 					appear
 					key={location.pathname}
 					timeout={{
-						enter: config.pages.timeout,
-						exit: config.pages.timeout
+						enter: config.page.durationIn,
+						exit: config.page.durationOut
 					}}
 					onExited={scrollTop}
 				>
@@ -48,7 +48,7 @@ class Transition extends React.PureComponent {
 							{children}
 						</div>
 					)}
-				</ReactTransition>
+				</PageTransition>
 			</TransitionGroup>
 		);
 	}
