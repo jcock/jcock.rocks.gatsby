@@ -143,7 +143,11 @@ class SEO extends React.PureComponent {
 					};
 					return (
 						<>
-							<Helmet title={seo.title} titleTemplate={seo.titleTemplate}>
+							<Helmet
+								title={seo.title}
+								defaultTitle={data.site.siteMetadata.siteTitle}
+								titleTemplate={seo.titleTemplate}
+							>
 								<html lang={data.site.siteMetadata.lang} />
 								<meta name="description" content={seo.description} />
 								<meta name="keywords" content={seo.keywords} />
