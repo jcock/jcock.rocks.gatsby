@@ -1,19 +1,19 @@
 import React from 'react';
 import anime from 'animejs';
-import { TransitionGroup, Transition as ReactTransition } from 'react-transition-group';
+import { TransitionGroup, Transition } from 'react-transition-group';
 
 import config from '../../../constants/transition';
 
 import style from '../Transition.module.css';
 
-class Transition extends React.PureComponent {
+class PageTransition extends React.PureComponent {
 	render() {
 		const { children, location, visible } = this.props;
 		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches === true;
 
 		const ANIMATION_DONE_EVENT = 'animation::done';
 		const triggerAnimationDoneEvent = node => node.dispatchEvent(new Event(ANIMATION_DONE_EVENT));
-		const addEndListener = (node, done) => node.addEventListener(ANIMATION_DONE_EVENT, done, false);
+		const addEndListener = (node, done) => node.addEventListener(ANIMATION_DONE_EVENT, done);
 
 		// const scrollTop = document.scrollingElement.scrollTop || document.body.scrollTop || window.pageYOffset;
 		const scrollTop = () => window.scrollTo(0, 0);
@@ -63,24 +63,21 @@ class Transition extends React.PureComponent {
 
 		return (
 			<TransitionGroup component={null}>
-				<ReactTransition
+				<Transition
 					appear
 					addEndListener={addEndListener}
 					in={visible}
 					key={location.pathname}
 					onEnter={enter}
 					onExit={exit}
-					timeout={{
-						enter: motionPreference.durationIn
-					}}
 				>
 					<div id="top" className={style.transitionContainer}>
 						{children}
 					</div>
-				</ReactTransition>
+				</Transition>
 			</TransitionGroup>
 		);
 	}
 }
 
-export default Transition;
+export default PageTransition;

@@ -1,9 +1,9 @@
-.transitionContainer {
+/* .transitionContainer {
 	overflow: hidden;
 	will-change: opacity;
-}
+} */
 
-/* .transitionContainer {
+.transitionContainer {
 	float: left;
 	overflow: hidden;
 	position: relative;
@@ -14,4 +14,4 @@
 .transitionContainer + .transitionContainer {
 	margin-left: -100%;
 	margin-right: 0;
-} */
+}
