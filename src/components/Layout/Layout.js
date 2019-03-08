@@ -4,7 +4,6 @@ import { Link } from 'gatsby';
 
 import Footer from '../Footer';
 import SkipLink from '../Navigation/SkipLink';
-// import Link from '../Transition/FadeLink';
 
 import '../../assets/css/app.css';
 import style from './Layout.module.css';
