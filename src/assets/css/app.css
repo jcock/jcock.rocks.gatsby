@@ -8,6 +8,7 @@
 /* Base */
 @import "./base/remedy.css";
 @import "./base/base.css";
+@import "./base/scrollbar.css";
 @import "./base/type.css";
 
 /* Elements */

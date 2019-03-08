@@ -4,13 +4,21 @@
 */
 
 a {
-	background-color: transparent;
+	background-position: 0 0;
 	color: var(--linkColor);
 	transition: all var(--timingBase) var(--easePrimary);
 	will-change: color;
 
 	&:hover {
+		background: linear-gradient(to right, var(--blue), var(--pink));
+		background-size: 800% 100%;
+		background-position: 100% 0;
 		color: var(--linkHoverColor);
 		text-decoration: none;
+
+		/* stylelint-disable property-no-vendor-prefix */
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		/* stylelint-enable */
 	}
 }
