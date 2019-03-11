@@ -122,6 +122,6 @@
 
 	/* Scrollbar */
 	--scrollbar-width: 0.5rem;
-	--scrollbar-track-background: rgba(0, 0, 0, 0.05);
-	--scrollbar-thumb-background: var(--pink);
+	--scrollbar-track-background: transparent;
+	--scrollbar-thumb-background: var(--black);
 }
