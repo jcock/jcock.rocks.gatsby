@@ -47,6 +47,7 @@
     "react": "^16.8.0",
     "react-dom": "^16.8.3",
     "react-helmet": "^5.2.0",
+    "react-pose": "^4.0.8",
     "react-transition-group": "^2.6.0"
   },
   "devDependencies": {
