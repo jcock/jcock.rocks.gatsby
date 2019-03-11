@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import posed, { PoseGroup } from 'react-pose';
 
+import style from '../Transition.module.css';
+
 class Transition extends React.PureComponent {
 	render() {
 		const { children, location } = this.props;
@@ -34,7 +36,7 @@ class Transition extends React.PureComponent {
 
 		return (
 			<PoseGroup animateOnMount>
-				<RouteContainer key={location.pathname} onPoseComplete={scrollTop}>
+				<RouteContainer key={location.pathname} className={style.transitionContainer} onPoseComplete={scrollTop}>
 					{children}
 				</RouteContainer>
 			</PoseGroup>
