@@ -24,8 +24,6 @@ class Transition extends React.PureComponent {
 	render() {
 		const { children, location } = this.props;
 
-		const scrollTop = () => window.scrollTo(0, 0);
-
 		return (
 			<TransitionGroup component={null}>
 				<PageTransition
@@ -35,7 +33,6 @@ class Transition extends React.PureComponent {
 						enter: config.page.durationIn,
 						exit: config.page.durationOut
 					}}
-					onExited={scrollTop}
 				>
 					{status => (
 						<div

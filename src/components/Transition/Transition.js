@@ -10,7 +10,6 @@ class Transition extends React.PureComponent {
 	render() {
 		const { children, location } = this.props;
 		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches === true;
-		const scrollTop = () => window.scrollTo(0, 0);
 
 		const motionPreference = {
 			durationIn: prefersReducedMotion ? 0 : config.page.durationIn,
@@ -38,7 +37,7 @@ class Transition extends React.PureComponent {
 
 		return (
 			<PoseGroup animateOnMount>
-				<RouteContainer key={location.pathname} className={style.transitionContainer} onPoseComplete={scrollTop}>
+				<RouteContainer key={location.pathname} className={style.transitionContainer}>
 					{children}
 				</RouteContainer>
 			</PoseGroup>
