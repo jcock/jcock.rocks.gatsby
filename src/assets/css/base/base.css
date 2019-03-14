@@ -15,6 +15,9 @@ body {
 	font-weight: var(--fontWeightBase);
 	line-height: var(--lineHeightBase);
 	padding: 3vw 6vw;
+	transition:
+		background-color var(--timingFast) var(--easePrimary),
+		color var(--timingFast) var(--easePrimary);
 
 	@media (prefers-color-scheme: dark) {
 		/* Dark Mode */

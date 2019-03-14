@@ -1,8 +1,12 @@
 .bio {
 	align-items: center;
+	border: solid var(--bodyColor);
+	border-width: 1px 0;
 	display: grid;
 	grid-gap: 0.5rem;
 	grid-template-columns: auto minmax(50px, 1fr);
+	margin: 1rem 0;
+	padding: 1rem 0;
 }
 
 .avatar {

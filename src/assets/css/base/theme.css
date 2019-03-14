@@ -11,9 +11,3 @@
 	--linkHoverColor: var(--grayLight);
 	--scrollbar-thumb-background: var(--white);
 }
-
-body {
-	transition:
-		background-color var(--timingFast) var(--easePrimary),
-		color var(--timingFast) var(--easePrimary);
-}
