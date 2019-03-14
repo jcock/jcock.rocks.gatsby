@@ -1,7 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
-import ScrollTopLink from '../Navigation/ScrollTopLink';
+import ScrollTopLink from '../../Navigation/ScrollTopLink';
 
 import style from './Footer.module.css';
 

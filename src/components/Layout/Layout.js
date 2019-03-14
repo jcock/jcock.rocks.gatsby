@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
 
-import Footer from '../Footer';
+import Footer from './Footer';
+import Header from './Header';
 import SkipLink from '../Navigation/SkipLink';
-import ThemeToggle from '../ThemeToggle';
 
 import '../../assets/css/app.css';
-import style from './Layout.module.css';
 
 class Layout extends React.PureComponent {
 	render() {
@@ -16,17 +14,7 @@ class Layout extends React.PureComponent {
 		return (
 			<>
 				<SkipLink to="#start-of-content">Skip to content</SkipLink>
-				<header className={style.header}>
-					<h1 className={style.title}>
-						<Link to="/">
-							jcock.rocks
-							<span role="img" aria-label="Rock on!">
-								🤘
-							</span>
-						</Link>
-					</h1>
-					<ThemeToggle />
-				</header>
+				<Header />
 				<main id="start-of-content">{children}</main>
 				<Footer />
 			</>
