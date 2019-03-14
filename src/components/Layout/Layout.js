@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 
 import Footer from '../Footer';
 import SkipLink from '../Navigation/SkipLink';
+import ThemeToggle from '../ThemeToggle';
 
 import '../../assets/css/app.css';
 import style from './Layout.module.css';
@@ -15,7 +16,7 @@ class Layout extends React.PureComponent {
 		return (
 			<>
 				<SkipLink to="#start-of-content">Skip to content</SkipLink>
-				<header>
+				<header className={style.header}>
 					<h1 className={style.title}>
 						<Link to="/">
 							jcock.rocks
@@ -24,6 +25,7 @@ class Layout extends React.PureComponent {
 							</span>
 						</Link>
 					</h1>
+					<ThemeToggle />
 				</header>
 				<main id="start-of-content">{children}</main>
 				<Footer />

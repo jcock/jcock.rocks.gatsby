@@ -86,18 +86,6 @@
 	--headingsColor: inherit;
 
 	/*
-	* Media Queries
-	* ------------------------------
-	*/
-
-	--mqXs: 0;
-	--mqSm: 36rem; /* 576px */
-	--mqMd: 48rem; /* 768px */
-	--mqLg: 62rem;  /* 992px */
-	--mqXl: 75rem;  /* 1200px */
-	--mqXxl: 90rem; /* 1440px */
-
-	/*
 	* Transitions
 	* ------------------------------
 	*/

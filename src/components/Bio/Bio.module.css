@@ -1,8 +1,8 @@
 .bio {
-	display: grid;
-	grid-template-columns: auto minmax(50px, 1fr);
-	grid-gap: 0.5rem;
 	align-items: center;
+	display: grid;
+	grid-gap: 0.5rem;
+	grid-template-columns: auto minmax(50px, 1fr);
 }
 
 .avatar {

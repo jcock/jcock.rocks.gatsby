@@ -1,0 +1,19 @@
+/*
+* Theme
+* ------------------------------
+*/
+
+/* Dark Mode */
+.themeDark {
+	--bodyBg: var(--grayDarkest);
+	--bodyColor: var(--white);
+	--linkColor: var(--grayLightest);
+	--linkHoverColor: var(--grayLight);
+	--scrollbar-thumb-background: var(--white);
+}
+
+body {
+	transition:
+		background-color var(--timingFast) var(--easePrimary),
+		color var(--timingFast) var(--easePrimary);
+}

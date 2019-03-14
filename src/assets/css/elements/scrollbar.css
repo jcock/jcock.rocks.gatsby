@@ -10,7 +10,7 @@ html {
 
 ::-webkit-scrollbar-track {
 	background: var(--scrollbar-track-background);
-	border: solid var(--black);
+	border: solid var(--scrollbar-thumb-background);
 	border-width: 0 0 0 1px;
 }
 

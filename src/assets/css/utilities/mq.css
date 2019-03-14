@@ -1,0 +1,19 @@
+/*
+* Media Queries
+* ------------------------------
+*/
+
+/* Min */
+@custom-media --minXs (min-width: 0);
+@custom-media --minSm (min-width: 36rem);
+@custom-media --minMd (min-width: 48rem);
+@custom-media --minLg (min-width: 62rem);
+@custom-media --minXl (min-width: 75rem);
+@custom-media --minXxl (min-width: 90rem);
+
+/* Max */
+@custom-media --maxSm (max-width: 36rem);
+@custom-media --maxMd (max-width: 48rem);
+@custom-media --maxLg (max-width: 62rem);
+@custom-media --maxXl (max-width: 75rem);
+@custom-media --maxXxl (max-width: 90rem);

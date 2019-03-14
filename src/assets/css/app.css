@@ -18,5 +18,8 @@
 @import "./utilities/hide.css";
 @import "./utilities/link-expand.css";
 
+/* Theme */
+@import "./base/theme.css";
+
 /* Print */
 @import "./utilities/print.css";
