@@ -1,5 +1,5 @@
 .footer {
-	border-top: 1px solid var(--gray);
+	border-top: 0.125rem solid var(--gray);
 	font-size: var(--fontSizeXs);
 	margin-top: var(--fontSizeXl);
 	padding-top: var(--fontSizeBase);
