@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ReactComponent as JCock } from '../../assets/svg/jcock.svg';
+import { ReactComponent as JCock } from '../../assets/img/svg/jcock.svg';
 
 import style from './Brand.module.css';
 
