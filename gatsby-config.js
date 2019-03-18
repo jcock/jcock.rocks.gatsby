@@ -139,6 +139,7 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		`gatsby-plugin-sitemap`,
+		`gatsby-plugin-svgr`,
 		{
 			resolve: `gatsby-plugin-netlify`, // Must be last in the plugins array
 			options: {

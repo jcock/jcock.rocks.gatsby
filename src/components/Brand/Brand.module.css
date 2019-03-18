@@ -1,0 +1,8 @@
+.brand {
+	--width: 6rem;
+
+	fill: currentColor;
+	height: calc(var(--width) * 0.765);
+	width: var(--width);
+	transition: fill var(--timingFast) var(--easePrimary);
+}
